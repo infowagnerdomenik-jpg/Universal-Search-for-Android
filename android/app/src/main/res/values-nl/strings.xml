@@ -1,0 +1,46 @@
+<resources>
+    <string name="app_name">Zoeken</string>
+    <string name="widget_settings_title">Widgetinstellingen</string>
+    <string name="searchbar_settings_card_title">Widgetinstellingen</string>
+    <string name="searchbar_settings_card_subtitle">Zoekbalk configureren</string>
+    <string name="settings_google_lens_subtitle">Lens weergeven in zoekbalk</string>
+    <string name="voice_search_title">Gesproken zoekopdracht</string>
+    <string name="settings_voice_search_subtitle">Spraakinvoer inschakelen</string>
+    <string name="settings_gemini_subtitle">Gemini gebruiken in plaats van standaardzoekopdracht</string>
+    <string name="button_apply">Toepassen</string>
+    <string name="navigate_back_description">Terug</string>
+    <string name="searchbar_detail_screen_title">Zoekbalk</string>
+    <string name="title_theme_settings">Thema-instellingen</string>
+    <string name="theme_screen_title">Thema &amp; Ontwerp</string>
+
+    <string name="theme_section_color">Thema &amp; Kleur</string>
+    <string name="theme_section_brightness">Helderheid</string>
+    <string name="theme_mode_auto_short">Auto</string>
+    <string name="theme_mode_day_short">Dag</string>
+    <string name="theme_mode_night_short">Nacht</string>
+
+    <string name="theme_system">Systeem</string>
+    <string name="theme_standard">Standaard</string>
+    <string name="theme_blue">Blauw</string>
+    <string name="theme_green">Groen</string>
+    <string name="theme_red">Rood</string>
+
+    <string name="settings_new_design_icon_dialog_title">Pictogramselectie</string>
+    <string name="settings_new_design_icon_music">Muziek</string>
+    <string name="settings_new_design_icon_subtitle">Pictogramontwerp wijzigen</string>
+    <string name="settings_widget_design_title">Widgetontwerp</string>
+    <string name="settings_widget_design_subtitle">Kleuren en uiterlijk wijzigen</string>
+
+    <string name="theme_amoled_title">AMOLED-modus</string>
+    <string name="theme_amoled_subtitle">Perfect zwart voor OLED-schermen</string>
+    <string name="theme_new_design_title">Nieuw ontwerp</string>
+    <string name="theme_new_design_subtitle">Modern uiterlijk voor de zoekbalk</string>
+    <string name="theme_no_background_title">Geen achtergrond</string>
+    <string name="theme_no_background_subtitle">Widget transparant maken</string>
+    <string name="theme_transparency_title">Transparantie</string>
+    <string name="theme_corner_radius_title">Hoekradius</string>
+    <string name="theme_corner_radius_info_desc">Informatie over hoekradius weergeven</string>
+    <string name="theme_corner_radius_dialog_title">Hoekradius</string>
+    <string name="theme_corner_radius_dialog_text">Kies een waarde die er het beste uitziet op je startscherm. Voor veel aangepaste launchers kan deze waarde nauwkeurig worden ingesteld, waardoor je hier volledige controle hebt.</string>
+    <string name="theme_corner_radius_dialog_confirm">Begrepen</string>
+</resources>

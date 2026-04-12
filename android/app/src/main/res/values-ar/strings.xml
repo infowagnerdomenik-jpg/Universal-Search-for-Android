@@ -1,0 +1,46 @@
+<resources>
+    <string name="app_name">بحث</string>
+    <string name="widget_settings_title">إعدادات الأداة</string>
+    <string name="searchbar_settings_card_title">إعدادات الأداة</string>
+    <string name="searchbar_settings_card_subtitle">تهيئة شريط البحث</string>
+    <string name="settings_google_lens_subtitle">إظهار Lens في شريط البحث</string>
+    <string name="voice_search_title">البحث الصوتي</string>
+    <string name="settings_voice_search_subtitle">تفعيل الإدخال الصوتي</string>
+    <string name="settings_gemini_subtitle">استخدام Gemini بدلاً من البحث العادي</string>
+    <string name="button_apply">تطبيق</string>
+    <string name="navigate_back_description">رجوع</string>
+    <string name="searchbar_detail_screen_title">شريط البحث</string>
+    <string name="title_theme_settings">إعدادات السمة</string>
+    <string name="theme_screen_title">السمة &amp; التصميم</string>
+
+    <string name="theme_section_color">السمة &amp; اللون</string>
+    <string name="theme_section_brightness">السطوع</string>
+    <string name="theme_mode_auto_short">تلقائي</string>
+    <string name="theme_mode_day_short">نهار</string>
+    <string name="theme_mode_night_short">ليل</string>
+
+    <string name="theme_system">النظام</string>
+    <string name="theme_standard">قياسي</string>
+    <string name="theme_blue">أزرق</string>
+    <string name="theme_green">أخضر</string>
+    <string name="theme_red">أحمر</string>
+
+    <string name="settings_new_design_icon_dialog_title">اختيار الأيقونة</string>
+    <string name="settings_new_design_icon_music">موسيقى</string>
+    <string name="settings_new_design_icon_subtitle">تغيير تصميم الأيقونة</string>
+    <string name="settings_widget_design_title">تصميم الأداة</string>
+    <string name="settings_widget_design_subtitle">تغيير الألوان والمظهر</string>
+
+    <string name="theme_amoled_title">وضع AMOLED</string>
+    <string name="theme_amoled_subtitle">أسود مثالي لشاشات OLED</string>
+    <string name="theme_new_design_title">تصميم جديد</string>
+    <string name="theme_new_design_subtitle">مظهر حديث لشريط البحث</string>
+    <string name="theme_no_background_title">بلا خلفية</string>
+    <string name="theme_no_background_subtitle">جعل الأداة شفافة</string>
+    <string name="theme_transparency_title">الشفافية</string>
+    <string name="theme_corner_radius_title">نصف قطر الزوايا</string>
+    <string name="theme_corner_radius_info_desc">إظهار معلومات عن نصف قطر الزوايا</string>
+    <string name="theme_corner_radius_dialog_title">نصف قطر الزوايا</string>
+    <string name="theme_corner_radius_dialog_text">اختر قيمة تبدو الأفضل على شاشتك الرئيسية. تتيح لك كثير من قاذفات التطبيقات المخصصة ضبط هذه القيمة بدقة، لذا لديك هنا تحكم كامل.</string>
+    <string name="theme_corner_radius_dialog_confirm">مفهوم</string>
+</resources>

@@ -1,0 +1,46 @@
+<resources>
+    <string name="app_name">搜索</string>
+    <string name="widget_settings_title">小组件设置</string>
+    <string name="searchbar_settings_card_title">小组件设置</string>
+    <string name="searchbar_settings_card_subtitle">配置搜索栏</string>
+    <string name="settings_google_lens_subtitle">在搜索栏中显示Lens</string>
+    <string name="voice_search_title">语音搜索</string>
+    <string name="settings_voice_search_subtitle">启用语音输入</string>
+    <string name="settings_gemini_subtitle">使用Gemini代替标准搜索</string>
+    <string name="button_apply">应用</string>
+    <string name="navigate_back_description">返回</string>
+    <string name="searchbar_detail_screen_title">搜索栏</string>
+    <string name="title_theme_settings">主题设置</string>
+    <string name="theme_screen_title">主题 &amp; 设计</string>
+
+    <string name="theme_section_color">主题 &amp; 颜色</string>
+    <string name="theme_section_brightness">亮度</string>
+    <string name="theme_mode_auto_short">自动</string>
+    <string name="theme_mode_day_short">白天</string>
+    <string name="theme_mode_night_short">夜晚</string>
+
+    <string name="theme_system">系统</string>
+    <string name="theme_standard">标准</string>
+    <string name="theme_blue">蓝色</string>
+    <string name="theme_green">绿色</string>
+    <string name="theme_red">红色</string>
+
+    <string name="settings_new_design_icon_dialog_title">图标选择</string>
+    <string name="settings_new_design_icon_music">音乐</string>
+    <string name="settings_new_design_icon_subtitle">更改图标设计</string>
+    <string name="settings_widget_design_title">小组件设计</string>
+    <string name="settings_widget_design_subtitle">更改颜色和外观</string>
+
+    <string name="theme_amoled_title">AMOLED模式</string>
+    <string name="theme_amoled_subtitle">适用于OLED屏幕的纯黑色</string>
+    <string name="theme_new_design_title">新设计</string>
+    <string name="theme_new_design_subtitle">搜索栏的现代外观</string>
+    <string name="theme_no_background_title">无背景</string>
+    <string name="theme_no_background_subtitle">使小组件透明</string>
+    <string name="theme_transparency_title">透明度</string>
+    <string name="theme_corner_radius_title">圆角半径</string>
+    <string name="theme_corner_radius_info_desc">显示圆角半径信息</string>
+    <string name="theme_corner_radius_dialog_title">圆角半径</string>
+    <string name="theme_corner_radius_dialog_text">选择在主屏幕上看起来最佳的值。对于许多自定义桌面，此值可以精确设置，因此您可以在此处完全控制。</string>
+    <string name="theme_corner_radius_dialog_confirm">明白了</string>
+</resources>

@@ -1,0 +1,46 @@
+<resources>
+    <string name="app_name">Пошук</string>
+    <string name="widget_settings_title">Налаштування віджета</string>
+    <string name="searchbar_settings_card_title">Налаштування віджета</string>
+    <string name="searchbar_settings_card_subtitle">Налаштувати рядок пошуку</string>
+    <string name="settings_google_lens_subtitle">Показати Lens у рядку пошуку</string>
+    <string name="voice_search_title">Голосовий пошук</string>
+    <string name="settings_voice_search_subtitle">Увімкнути голосове введення</string>
+    <string name="settings_gemini_subtitle">Використовувати Gemini замість стандартного пошуку</string>
+    <string name="button_apply">Застосувати</string>
+    <string name="navigate_back_description">Назад</string>
+    <string name="searchbar_detail_screen_title">Рядок пошуку</string>
+    <string name="title_theme_settings">Налаштування теми</string>
+    <string name="theme_screen_title">Тема &amp; Дизайн</string>
+
+    <string name="theme_section_color">Тема &amp; Колір</string>
+    <string name="theme_section_brightness">Яскравість</string>
+    <string name="theme_mode_auto_short">Авто</string>
+    <string name="theme_mode_day_short">День</string>
+    <string name="theme_mode_night_short">Ніч</string>
+
+    <string name="theme_system">Системна</string>
+    <string name="theme_standard">Стандартна</string>
+    <string name="theme_blue">Синя</string>
+    <string name="theme_green">Зелена</string>
+    <string name="theme_red">Червона</string>
+
+    <string name="settings_new_design_icon_dialog_title">Вибір значка</string>
+    <string name="settings_new_design_icon_music">Музика</string>
+    <string name="settings_new_design_icon_subtitle">Змінити дизайн значка</string>
+    <string name="settings_widget_design_title">Дизайн віджета</string>
+    <string name="settings_widget_design_subtitle">Змінити кольори та зовнішній вигляд</string>
+
+    <string name="theme_amoled_title">Режим AMOLED</string>
+    <string name="theme_amoled_subtitle">Ідеальний чорний для OLED-екранів</string>
+    <string name="theme_new_design_title">Новий дизайн</string>
+    <string name="theme_new_design_subtitle">Сучасний вигляд рядка пошуку</string>
+    <string name="theme_no_background_title">Без фону</string>
+    <string name="theme_no_background_subtitle">Зробити віджет прозорим</string>
+    <string name="theme_transparency_title">Прозорість</string>
+    <string name="theme_corner_radius_title">Радіус кутів</string>
+    <string name="theme_corner_radius_info_desc">Показати інформацію про радіус кутів</string>
+    <string name="theme_corner_radius_dialog_title">Радіус кутів</string>
+    <string name="theme_corner_radius_dialog_text">Виберіть значення, яке найкраще виглядає на головному екрані. Для багатьох власних лончерів це значення можна налаштувати точно, тому тут у вас повний контроль.</string>
+    <string name="theme_corner_radius_dialog_confirm">Зрозуміло</string>
+</resources>

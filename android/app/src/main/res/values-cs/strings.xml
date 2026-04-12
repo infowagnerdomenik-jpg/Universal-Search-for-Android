@@ -1,0 +1,46 @@
+<resources>
+    <string name="app_name">Hledat</string>
+    <string name="widget_settings_title">Nastavení widgetu</string>
+    <string name="searchbar_settings_card_title">Nastavení widgetu</string>
+    <string name="searchbar_settings_card_subtitle">Konfigurovat panel vyhledávání</string>
+    <string name="settings_google_lens_subtitle">Zobrazit Lens v panelu vyhledávání</string>
+    <string name="voice_search_title">Hlasové vyhledávání</string>
+    <string name="settings_voice_search_subtitle">Povolit hlasový vstup</string>
+    <string name="settings_gemini_subtitle">Použít Gemini místo standardního vyhledávání</string>
+    <string name="button_apply">Použít</string>
+    <string name="navigate_back_description">Zpět</string>
+    <string name="searchbar_detail_screen_title">Panel vyhledávání</string>
+    <string name="title_theme_settings">Nastavení motivu</string>
+    <string name="theme_screen_title">Motiv &amp; Design</string>
+
+    <string name="theme_section_color">Motiv &amp; Barva</string>
+    <string name="theme_section_brightness">Jas</string>
+    <string name="theme_mode_auto_short">Auto</string>
+    <string name="theme_mode_day_short">Den</string>
+    <string name="theme_mode_night_short">Noc</string>
+
+    <string name="theme_system">Systém</string>
+    <string name="theme_standard">Standard</string>
+    <string name="theme_blue">Modrá</string>
+    <string name="theme_green">Zelená</string>
+    <string name="theme_red">Červená</string>
+
+    <string name="settings_new_design_icon_dialog_title">Výběr ikony</string>
+    <string name="settings_new_design_icon_music">Hudba</string>
+    <string name="settings_new_design_icon_subtitle">Změnit design ikony</string>
+    <string name="settings_widget_design_title">Design widgetu</string>
+    <string name="settings_widget_design_subtitle">Změnit barvy a vzhled</string>
+
+    <string name="theme_amoled_title">Režim AMOLED</string>
+    <string name="theme_amoled_subtitle">Dokonalá černá pro OLED displeje</string>
+    <string name="theme_new_design_title">Nový design</string>
+    <string name="theme_new_design_subtitle">Moderní vzhled panelu vyhledávání</string>
+    <string name="theme_no_background_title">Bez pozadí</string>
+    <string name="theme_no_background_subtitle">Udělat widget průhledný</string>
+    <string name="theme_transparency_title">Průhlednost</string>
+    <string name="theme_corner_radius_title">Poloměr rohů</string>
+    <string name="theme_corner_radius_info_desc">Zobrazit informace o poloměru rohů</string>
+    <string name="theme_corner_radius_dialog_title">Poloměr rohů</string>
+    <string name="theme_corner_radius_dialog_text">Vyberte hodnotu, která vypadá nejlépe na vaší domovské obrazovce. Pro mnoho vlastních spouštěčů lze tuto hodnotu nastavit přesně, proto máte zde plnou kontrolu.</string>
+    <string name="theme_corner_radius_dialog_confirm">Rozumím</string>
+</resources>

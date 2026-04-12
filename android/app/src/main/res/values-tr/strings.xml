@@ -1,0 +1,46 @@
+<resources>
+    <string name="app_name">Arama</string>
+    <string name="widget_settings_title">Widget ayarları</string>
+    <string name="searchbar_settings_card_title">Widget ayarları</string>
+    <string name="searchbar_settings_card_subtitle">Arama çubuğunu yapılandır</string>
+    <string name="settings_google_lens_subtitle">Arama çubuğunda Lens\'i göster</string>
+    <string name="voice_search_title">Sesli arama</string>
+    <string name="settings_voice_search_subtitle">Ses girişini etkinleştir</string>
+    <string name="settings_gemini_subtitle">Standart arama yerine Gemini\'yi kullan</string>
+    <string name="button_apply">Uygula</string>
+    <string name="navigate_back_description">Geri</string>
+    <string name="searchbar_detail_screen_title">Arama çubuğu</string>
+    <string name="title_theme_settings">Tema ayarları</string>
+    <string name="theme_screen_title">Tema &amp; Tasarım</string>
+
+    <string name="theme_section_color">Tema &amp; Renk</string>
+    <string name="theme_section_brightness">Parlaklık</string>
+    <string name="theme_mode_auto_short">Oto</string>
+    <string name="theme_mode_day_short">Gündüz</string>
+    <string name="theme_mode_night_short">Gece</string>
+
+    <string name="theme_system">Sistem</string>
+    <string name="theme_standard">Standart</string>
+    <string name="theme_blue">Mavi</string>
+    <string name="theme_green">Yeşil</string>
+    <string name="theme_red">Kırmızı</string>
+
+    <string name="settings_new_design_icon_dialog_title">Simge seçimi</string>
+    <string name="settings_new_design_icon_music">Müzik</string>
+    <string name="settings_new_design_icon_subtitle">Simge tasarımını değiştir</string>
+    <string name="settings_widget_design_title">Widget tasarımı</string>
+    <string name="settings_widget_design_subtitle">Renkleri ve görünümü değiştir</string>
+
+    <string name="theme_amoled_title">AMOLED modu</string>
+    <string name="theme_amoled_subtitle">OLED ekranlar için mükemmel siyah</string>
+    <string name="theme_new_design_title">Yeni tasarım</string>
+    <string name="theme_new_design_subtitle">Arama çubuğu için modern görünüm</string>
+    <string name="theme_no_background_title">Arka plan yok</string>
+    <string name="theme_no_background_subtitle">Widget\'ı şeffaf yap</string>
+    <string name="theme_transparency_title">Şeffaflık</string>
+    <string name="theme_corner_radius_title">Köşe yarıçapı</string>
+    <string name="theme_corner_radius_info_desc">Köşe yarıçapı hakkında bilgi göster</string>
+    <string name="theme_corner_radius_dialog_title">Köşe yarıçapı</string>
+    <string name="theme_corner_radius_dialog_text">Ana ekranınızda en iyi görünen değeri seçin. Birçok özel başlatıcıda bu değer hassas bir şekilde ayarlanabilir, bu yüzden burada tam kontrole sahipsiniz.</string>
+    <string name="theme_corner_radius_dialog_confirm">Anladım</string>
+</resources>

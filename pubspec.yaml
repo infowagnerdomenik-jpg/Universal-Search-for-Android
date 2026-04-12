@@ -1,0 +1,63 @@
+name: search
+description: "A universal Search"
+# The following line prevents the package from being accidentally published to
+# pub.dev using `flutter pub publish`. This is preferred for private packages.
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+
+# The following defines the version and build number for your application.
+version: 1.0.0-alpha.1+1
+
+environment:
+  sdk: ^3.10.7
+
+# Dependencies specify other packages that your package needs in order to work.
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # The following adds the Cupertino Icons font to your application.
+  cupertino_icons: ^1.0.8
+  flutter_svg: ^2.2.3
+  shared_preferences: ^2.5.4
+  path_provider: ^2.1.2
+  url_launcher: ^6.3.2
+  flutter_localizations:
+    sdk: flutter
+  intl: ^0.20.2
+  dynamic_color: ^1.8.1
+  provider: ^6.1.5+1
+  installed_apps: ^2.1.1
+  fast_contacts: ^5.0.1
+  permission_handler: ^12.0.1
+  device_calendar: ^4.3.3
+  design_engine:
+    path: /mnt/SATA-500GB/Programierung/Projekte/Plugins/design_engine/
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  # The "flutter_lints" package below contains a set of recommended lints to
+  # encourage good coding practices.
+  flutter_lints: ^6.0.0
+
+# HIER ist der Override-Block für die "Bleeding Edge" Versionen aus deinem Terminal
+dependency_overrides:
+  characters: ^1.4.1
+  matcher: ^0.12.18
+  material_color_utilities: ^0.13.0
+  meta: ^1.18.1
+  test_api: ^0.7.9
+
+# The following section is specific to Flutter packages.
+flutter:
+
+  # The following line ensures that the Material Icons font is
+  # included with your application, so that you can use the icons in
+  # the material Icons class.
+  uses-material-design: true
+
+  # WICHTIG: Assets anmelden
+  assets:
+    - assets/icons/original/
+    - assets/icons/dynamic/

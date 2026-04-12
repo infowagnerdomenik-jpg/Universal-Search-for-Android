@@ -1,0 +1,56 @@
+<resources>
+    <string name="app_name">Search</string>
+    <string name="searchbar_widget_description">A search bar for the home screen.</string>
+    <string name="search_icon_content_description">Search Icon</string>
+    <string name="mic_icon_content_description">Voice Search Icon</string>
+    <string name="lens_icon_content_description">Google Lens Icon</string>
+    <string name="gemini_icon_content_description">Gemini Icon</string>
+    <string name="widget_settings_title">Widget Settings</string>
+    <string name="searchbar_settings_card_title">Widget Settings</string>
+    <string name="searchbar_settings_card_subtitle">Configure search bar</string>
+    <string name="settings_section_icons">Icons</string>
+    <string name="settings_google_lens_title">Google Lens</string>
+    <string name="settings_google_lens_subtitle">Show Lens in search bar</string>
+    <string name="voice_search_title">Voice Search</string>
+    <string name="settings_voice_search_subtitle">Enable voice input</string>
+    <string name="settings_gemini_title">Google Gemini</string>
+    <string name="settings_gemini_subtitle">Use Gemini instead of standard search</string>
+    <string name="button_apply">Apply</string>
+    <string name="navigate_back_description">Back</string>
+    <string name="searchbar_detail_screen_title">Search Bar</string>
+    <string name="title_theme_settings">Theme Settings</string>
+    <string name="theme_screen_title">Theme &amp; Design</string>
+    
+    <string name="theme_section_color">Theme &amp; Color</string>
+    <string name="theme_section_brightness">Brightness</string>
+    <string name="theme_mode_auto_short">Auto</string>
+    <string name="theme_mode_day_short">Day</string>
+    <string name="theme_mode_night_short">Night</string>
+    
+    <string name="theme_system">System</string>
+    <string name="theme_standard">Standard</string>
+    <string name="theme_blue">Blue</string>
+    <string name="theme_green">Green</string>
+    <string name="theme_red">Red</string>
+    <string name="theme_nothing">Nothing OS</string>
+    
+    <string name="settings_new_design_icon_dialog_title">Icon selection</string>
+    <string name="settings_new_design_icon_music">Music</string>
+    <string name="settings_new_design_icon_maps">Google Maps</string>
+    <string name="settings_new_design_icon_subtitle">Change icon design</string>
+    <string name="settings_widget_design_title">Widget Design</string>
+    <string name="settings_widget_design_subtitle">Change colors and look</string>
+
+    <string name="theme_amoled_title">AMOLED Mode</string>
+    <string name="theme_amoled_subtitle">Perfect black for OLED screens</string>
+    <string name="theme_new_design_title">New Design</string>
+    <string name="theme_new_design_subtitle">Modern search bar look</string>
+    <string name="theme_no_background_title">No Background</string>
+    <string name="theme_no_background_subtitle">Make the widget transparent</string>
+    <string name="theme_transparency_title">Transparency</string>
+    <string name="theme_corner_radius_title">Corner Radius</string>
+    <string name="theme_corner_radius_info_desc">Show info about corner radius</string>
+    <string name="theme_corner_radius_dialog_title">Corner Radius</string>
+    <string name="theme_corner_radius_dialog_text">Choose a value that looks best on your home screen. For many custom launchers, this value can be set precisely, which is why you have full control here.</string>
+    <string name="theme_corner_radius_dialog_confirm">Understood</string>
+</resources>

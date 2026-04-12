@@ -1,0 +1,46 @@
+<resources>
+    <string name="app_name">検索</string>
+    <string name="widget_settings_title">ウィジェット設定</string>
+    <string name="searchbar_settings_card_title">ウィジェット設定</string>
+    <string name="searchbar_settings_card_subtitle">検索バーを設定</string>
+    <string name="settings_google_lens_subtitle">検索バーにLensを表示</string>
+    <string name="voice_search_title">音声検索</string>
+    <string name="settings_voice_search_subtitle">音声入力を有効にする</string>
+    <string name="settings_gemini_subtitle">通常の検索の代わりにGeminiを使用</string>
+    <string name="button_apply">適用</string>
+    <string name="navigate_back_description">戻る</string>
+    <string name="searchbar_detail_screen_title">検索バー</string>
+    <string name="title_theme_settings">テーマ設定</string>
+    <string name="theme_screen_title">テーマ &amp; デザイン</string>
+
+    <string name="theme_section_color">テーマ &amp; カラー</string>
+    <string name="theme_section_brightness">明るさ</string>
+    <string name="theme_mode_auto_short">自動</string>
+    <string name="theme_mode_day_short">昼</string>
+    <string name="theme_mode_night_short">夜</string>
+
+    <string name="theme_system">システム</string>
+    <string name="theme_standard">標準</string>
+    <string name="theme_blue">青</string>
+    <string name="theme_green">緑</string>
+    <string name="theme_red">赤</string>
+
+    <string name="settings_new_design_icon_dialog_title">アイコン選択</string>
+    <string name="settings_new_design_icon_music">音楽</string>
+    <string name="settings_new_design_icon_subtitle">アイコンデザインを変更</string>
+    <string name="settings_widget_design_title">ウィジェットデザイン</string>
+    <string name="settings_widget_design_subtitle">色と外観を変更</string>
+
+    <string name="theme_amoled_title">AMOLEDモード</string>
+    <string name="theme_amoled_subtitle">OLEDスクリーン向けの完全な黒</string>
+    <string name="theme_new_design_title">新しいデザイン</string>
+    <string name="theme_new_design_subtitle">検索バーのモダンな外観</string>
+    <string name="theme_no_background_title">背景なし</string>
+    <string name="theme_no_background_subtitle">ウィジェットを透明にする</string>
+    <string name="theme_transparency_title">透明度</string>
+    <string name="theme_corner_radius_title">角の丸み</string>
+    <string name="theme_corner_radius_info_desc">角の丸みに関する情報を表示</string>
+    <string name="theme_corner_radius_dialog_title">角の丸み</string>
+    <string name="theme_corner_radius_dialog_text">ホーム画面で最もきれいに見える値を選択してください。多くのカスタムランチャーではこの値を精密に設定できるため、ここで完全な制御が可能です。</string>
+    <string name="theme_corner_radius_dialog_confirm">了解</string>
+</resources>

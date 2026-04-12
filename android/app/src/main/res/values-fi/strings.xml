@@ -1,0 +1,46 @@
+<resources>
+    <string name="app_name">Haku</string>
+    <string name="widget_settings_title">Widgetin asetukset</string>
+    <string name="searchbar_settings_card_title">Widgetin asetukset</string>
+    <string name="searchbar_settings_card_subtitle">Määritä hakupalkki</string>
+    <string name="settings_google_lens_subtitle">Näytä Lens hakupalkissa</string>
+    <string name="voice_search_title">Äänihaku</string>
+    <string name="settings_voice_search_subtitle">Ota äänisyöttö käyttöön</string>
+    <string name="settings_gemini_subtitle">Käytä Geminiä tavallisen haun sijaan</string>
+    <string name="button_apply">Käytä</string>
+    <string name="navigate_back_description">Takaisin</string>
+    <string name="searchbar_detail_screen_title">Hakupalkki</string>
+    <string name="title_theme_settings">Teema-asetukset</string>
+    <string name="theme_screen_title">Teema &amp; Ulkoasu</string>
+
+    <string name="theme_section_color">Teema &amp; Väri</string>
+    <string name="theme_section_brightness">Kirkkaus</string>
+    <string name="theme_mode_auto_short">Auto</string>
+    <string name="theme_mode_day_short">Päivä</string>
+    <string name="theme_mode_night_short">Yö</string>
+
+    <string name="theme_system">Järjestelmä</string>
+    <string name="theme_standard">Vakio</string>
+    <string name="theme_blue">Sininen</string>
+    <string name="theme_green">Vihreä</string>
+    <string name="theme_red">Punainen</string>
+
+    <string name="settings_new_design_icon_dialog_title">Kuvakevalinta</string>
+    <string name="settings_new_design_icon_music">Musiikki</string>
+    <string name="settings_new_design_icon_subtitle">Vaihda kuvakkeen ulkoasu</string>
+    <string name="settings_widget_design_title">Widgetin ulkoasu</string>
+    <string name="settings_widget_design_subtitle">Muuta värejä ja ulkoasua</string>
+
+    <string name="theme_amoled_title">AMOLED-tila</string>
+    <string name="theme_amoled_subtitle">Täydellinen musta OLED-näytöille</string>
+    <string name="theme_new_design_title">Uusi ulkoasu</string>
+    <string name="theme_new_design_subtitle">Hakupalkin moderni ulkoasu</string>
+    <string name="theme_no_background_title">Ei taustaa</string>
+    <string name="theme_no_background_subtitle">Tee widgetistä läpinäkyvä</string>
+    <string name="theme_transparency_title">Läpinäkyvyys</string>
+    <string name="theme_corner_radius_title">Kulmien säde</string>
+    <string name="theme_corner_radius_info_desc">Näytä tietoja kulmien säteestä</string>
+    <string name="theme_corner_radius_dialog_title">Kulmien säde</string>
+    <string name="theme_corner_radius_dialog_text">Valitse arvo, joka näyttää parhaalta aloitusnäytölläsi. Monissa mukautetuissa käynnistysohjelmissa tämä arvo voidaan asettaa tarkasti, joten sinulla on täydellinen hallinta tässä.</string>
+    <string name="theme_corner_radius_dialog_confirm">Ymmärretty</string>
+</resources>

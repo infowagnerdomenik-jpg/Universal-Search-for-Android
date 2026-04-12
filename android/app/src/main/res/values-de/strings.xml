@@ -1,0 +1,50 @@
+<resources>
+    <string name="app_name">Suche</string>
+    <string name="widget_settings_title">Widget Einstellungen</string>
+    <string name="searchbar_settings_card_title">Widget Einstellungen</string>
+    <string name="searchbar_settings_card_subtitle">Suchleiste konfigurieren</string>
+    <string name="settings_section_icons">Icons</string>
+    <string name="settings_google_lens_title">Google Lens</string>
+    <string name="settings_google_lens_subtitle">Lens in Suchleiste anzeigen</string>
+    <string name="voice_search_title">Sprachsuche</string>
+    <string name="settings_voice_search_subtitle">Spracheingabe aktivieren</string>
+    <string name="settings_gemini_title">Google Gemini</string>
+    <string name="settings_gemini_subtitle">Gemini statt Standardsuche nutzen</string>
+    <string name="button_apply">Anwenden</string>
+    <string name="navigate_back_description">Zurück</string>
+    <string name="searchbar_detail_screen_title">Suchleiste</string>
+    <string name="title_theme_settings">Design-Einstellungen</string>
+    <string name="theme_screen_title">Design &amp; Thema</string>
+
+    <string name="theme_section_color">Thema &amp; Farbe</string>
+    <string name="theme_section_brightness">Helligkeit</string>
+    <string name="theme_mode_auto_short">Auto</string>
+    <string name="theme_mode_day_short">Tag</string>
+    <string name="theme_mode_night_short">Nacht</string>
+
+    <string name="theme_system">System</string>
+    <string name="theme_standard">Standard</string>
+    <string name="theme_blue">Blau</string>
+    <string name="theme_green">Grün</string>
+    <string name="theme_red">Rot</string>
+    <string name="theme_nothing">Nothing OS</string>
+
+    <string name="settings_new_design_icon_dialog_title">Icon Auswahl</string>
+    <string name="settings_new_design_icon_music">Musik</string>
+<string name="settings_new_design_icon_subtitle">Icon-Design ändern</string>
+    <string name="settings_widget_design_title">Widget Design</string>
+    <string name="settings_widget_design_subtitle">Farben und Aussehen anpassen</string>
+
+    <string name="theme_amoled_title">AMOLED Modus</string>
+    <string name="theme_amoled_subtitle">Perfektes Schwarz für OLED-Displays</string>
+    <string name="theme_new_design_title">Neues Design</string>
+    <string name="theme_new_design_subtitle">Moderner Look für die Suchleiste</string>
+    <string name="theme_no_background_title">Kein Hintergrund</string>
+    <string name="theme_no_background_subtitle">Widget komplett transparent machen</string>
+    <string name="theme_transparency_title">Transparenz</string>
+    <string name="theme_corner_radius_title">Eckenradius</string>
+    <string name="theme_corner_radius_info_desc">Infos zum Eckenradius anzeigen</string>
+    <string name="theme_corner_radius_dialog_title">Eckenradius</string>
+    <string name="theme_corner_radius_dialog_text">Wähle einen Wert, der auf deinem Startbildschirm am besten aussieht. Für viele Custom-Launcher lässt sich dieser Wert jedoch präzise einstellen, weshalb du hier die volle Kontrolle hast.</string>
+    <string name="theme_corner_radius_dialog_confirm">Verstanden</string>
+</resources>

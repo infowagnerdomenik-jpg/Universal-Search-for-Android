@@ -1,0 +1,46 @@
+<resources>
+    <string name="app_name">Ricerca</string>
+    <string name="widget_settings_title">Impostazioni widget</string>
+    <string name="searchbar_settings_card_title">Impostazioni widget</string>
+    <string name="searchbar_settings_card_subtitle">Configura la barra di ricerca</string>
+    <string name="settings_google_lens_subtitle">Mostra Lens nella barra di ricerca</string>
+    <string name="voice_search_title">Ricerca vocale</string>
+    <string name="settings_voice_search_subtitle">Attiva input vocale</string>
+    <string name="settings_gemini_subtitle">Usa Gemini al posto della ricerca standard</string>
+    <string name="button_apply">Applica</string>
+    <string name="navigate_back_description">Indietro</string>
+    <string name="searchbar_detail_screen_title">Barra di ricerca</string>
+    <string name="title_theme_settings">Impostazioni tema</string>
+    <string name="theme_screen_title">Tema &amp; Design</string>
+
+    <string name="theme_section_color">Tema &amp; Colore</string>
+    <string name="theme_section_brightness">Luminosità</string>
+    <string name="theme_mode_auto_short">Auto</string>
+    <string name="theme_mode_day_short">Giorno</string>
+    <string name="theme_mode_night_short">Notte</string>
+
+    <string name="theme_system">Sistema</string>
+    <string name="theme_standard">Standard</string>
+    <string name="theme_blue">Blu</string>
+    <string name="theme_green">Verde</string>
+    <string name="theme_red">Rosso</string>
+
+    <string name="settings_new_design_icon_dialog_title">Selezione icona</string>
+    <string name="settings_new_design_icon_music">Musica</string>
+    <string name="settings_new_design_icon_subtitle">Cambia design icona</string>
+    <string name="settings_widget_design_title">Design widget</string>
+    <string name="settings_widget_design_subtitle">Modifica colori e aspetto</string>
+
+    <string name="theme_amoled_title">Modalità AMOLED</string>
+    <string name="theme_amoled_subtitle">Nero perfetto per schermi OLED</string>
+    <string name="theme_new_design_title">Nuovo design</string>
+    <string name="theme_new_design_subtitle">Aspetto moderno per la barra di ricerca</string>
+    <string name="theme_no_background_title">Nessuno sfondo</string>
+    <string name="theme_no_background_subtitle">Rendi il widget trasparente</string>
+    <string name="theme_transparency_title">Trasparenza</string>
+    <string name="theme_corner_radius_title">Raggio degli angoli</string>
+    <string name="theme_corner_radius_info_desc">Mostra informazioni sul raggio degli angoli</string>
+    <string name="theme_corner_radius_dialog_title">Raggio degli angoli</string>
+    <string name="theme_corner_radius_dialog_text">Scegli un valore che sia più adatto alla tua schermata home. Per molti launcher personalizzati, questo valore può essere impostato con precisione, motivo per cui qui hai il pieno controllo.</string>
+    <string name="theme_corner_radius_dialog_confirm">Capito</string>
+</resources>

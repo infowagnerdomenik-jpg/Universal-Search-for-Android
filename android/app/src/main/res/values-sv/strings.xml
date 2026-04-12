@@ -1,0 +1,46 @@
+<resources>
+    <string name="app_name">Sök</string>
+    <string name="widget_settings_title">Widgetinställningar</string>
+    <string name="searchbar_settings_card_title">Widgetinställningar</string>
+    <string name="searchbar_settings_card_subtitle">Konfigurera sökfält</string>
+    <string name="settings_google_lens_subtitle">Visa Lens i sökfältet</string>
+    <string name="voice_search_title">Röstsökning</string>
+    <string name="settings_voice_search_subtitle">Aktivera röstinmatning</string>
+    <string name="settings_gemini_subtitle">Använd Gemini istället för standardsökning</string>
+    <string name="button_apply">Tillämpa</string>
+    <string name="navigate_back_description">Tillbaka</string>
+    <string name="searchbar_detail_screen_title">Sökfält</string>
+    <string name="title_theme_settings">Temainställningar</string>
+    <string name="theme_screen_title">Tema &amp; Design</string>
+
+    <string name="theme_section_color">Tema &amp; Färg</string>
+    <string name="theme_section_brightness">Ljusstyrka</string>
+    <string name="theme_mode_auto_short">Auto</string>
+    <string name="theme_mode_day_short">Dag</string>
+    <string name="theme_mode_night_short">Natt</string>
+
+    <string name="theme_system">System</string>
+    <string name="theme_standard">Standard</string>
+    <string name="theme_blue">Blå</string>
+    <string name="theme_green">Grön</string>
+    <string name="theme_red">Röd</string>
+
+    <string name="settings_new_design_icon_dialog_title">Ikonval</string>
+    <string name="settings_new_design_icon_music">Musik</string>
+    <string name="settings_new_design_icon_subtitle">Ändra ikondesign</string>
+    <string name="settings_widget_design_title">Widgetdesign</string>
+    <string name="settings_widget_design_subtitle">Ändra färger och utseende</string>
+
+    <string name="theme_amoled_title">AMOLED-läge</string>
+    <string name="theme_amoled_subtitle">Perfekt svart för OLED-skärmar</string>
+    <string name="theme_new_design_title">Ny design</string>
+    <string name="theme_new_design_subtitle">Modernt utseende för sökfältet</string>
+    <string name="theme_no_background_title">Ingen bakgrund</string>
+    <string name="theme_no_background_subtitle">Gör widgeten transparent</string>
+    <string name="theme_transparency_title">Transparens</string>
+    <string name="theme_corner_radius_title">Hörnradie</string>
+    <string name="theme_corner_radius_info_desc">Visa information om hörnradie</string>
+    <string name="theme_corner_radius_dialog_title">Hörnradie</string>
+    <string name="theme_corner_radius_dialog_text">Välj ett värde som ser bäst ut på din startskärm. För många anpassade launchers kan detta värde ställas in exakt, varför du har full kontroll här.</string>
+    <string name="theme_corner_radius_dialog_confirm">Förstått</string>
+</resources>

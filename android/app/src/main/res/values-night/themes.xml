@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.Theme" parent="android:Theme.Material.NoActionBar" />
+
+    <style name="Theme.App.Starting" parent="Theme.SplashScreen">
+        <!-- Dark Mode: Material You accent2_800 -->
+        <item name="windowSplashScreenBackground">@android:color/system_accent2_800</item>
+        <!-- Icon verstecken -->
+        <item name="windowSplashScreenAnimatedIcon">@android:color/transparent</item>
+        <item name="postSplashScreenTheme">@style/Theme.Theme</item>
+    </style>
+</resources>

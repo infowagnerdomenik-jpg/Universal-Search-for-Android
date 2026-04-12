@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<appwidget-provider xmlns:android="http://schemas.android.com/apk/res/android"
+                    android:minWidth="250dp"
+                    android:minHeight="52dp"
+                    android:minResizeWidth="110dp"
+                    android:minResizeHeight="52dp"
+                    android:updatePeriodMillis="86400000"
+                    android:initialLayout="@layout/searchbar_widget_layout"
+                    android:description="@string/searchbar_widget_description"
+                    android:resizeMode="horizontal"
+                    android:widgetCategory="home_screen"
+                    android:widgetFeatures="reconfigurable|configuration_optional"
+                    android:configure="de.search.dw.search.SearchbarSettingsActivity"
+                    android:previewImage="@drawable/searchbar_widget_preview_image"
+                    android:previewLayout="@layout/searchbar_widget_preview_layout">
+    </appwidget-provider>

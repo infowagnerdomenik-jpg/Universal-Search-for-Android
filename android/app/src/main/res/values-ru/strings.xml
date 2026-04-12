@@ -1,0 +1,46 @@
+<resources>
+    <string name="app_name">Поиск</string>
+    <string name="widget_settings_title">Настройки виджета</string>
+    <string name="searchbar_settings_card_title">Настройки виджета</string>
+    <string name="searchbar_settings_card_subtitle">Настроить строку поиска</string>
+    <string name="settings_google_lens_subtitle">Показать Lens в строке поиска</string>
+    <string name="voice_search_title">Голосовой поиск</string>
+    <string name="settings_voice_search_subtitle">Включить голосовой ввод</string>
+    <string name="settings_gemini_subtitle">Использовать Gemini вместо стандартного поиска</string>
+    <string name="button_apply">Применить</string>
+    <string name="navigate_back_description">Назад</string>
+    <string name="searchbar_detail_screen_title">Строка поиска</string>
+    <string name="title_theme_settings">Настройки темы</string>
+    <string name="theme_screen_title">Тема &amp; Дизайн</string>
+
+    <string name="theme_section_color">Тема &amp; Цвет</string>
+    <string name="theme_section_brightness">Яркость</string>
+    <string name="theme_mode_auto_short">Авто</string>
+    <string name="theme_mode_day_short">День</string>
+    <string name="theme_mode_night_short">Ночь</string>
+
+    <string name="theme_system">Системная</string>
+    <string name="theme_standard">Стандартная</string>
+    <string name="theme_blue">Синяя</string>
+    <string name="theme_green">Зелёная</string>
+    <string name="theme_red">Красная</string>
+
+    <string name="settings_new_design_icon_dialog_title">Выбор значка</string>
+    <string name="settings_new_design_icon_music">Музыка</string>
+    <string name="settings_new_design_icon_subtitle">Изменить дизайн значка</string>
+    <string name="settings_widget_design_title">Дизайн виджета</string>
+    <string name="settings_widget_design_subtitle">Изменить цвета и внешний вид</string>
+
+    <string name="theme_amoled_title">Режим AMOLED</string>
+    <string name="theme_amoled_subtitle">Идеальный чёрный для OLED-экранов</string>
+    <string name="theme_new_design_title">Новый дизайн</string>
+    <string name="theme_new_design_subtitle">Современный вид строки поиска</string>
+    <string name="theme_no_background_title">Без фона</string>
+    <string name="theme_no_background_subtitle">Сделать виджет прозрачным</string>
+    <string name="theme_transparency_title">Прозрачность</string>
+    <string name="theme_corner_radius_title">Радиус углов</string>
+    <string name="theme_corner_radius_info_desc">Показать информацию о радиусе углов</string>
+    <string name="theme_corner_radius_dialog_title">Радиус углов</string>
+    <string name="theme_corner_radius_dialog_text">Выберите значение, которое лучше всего выглядит на главном экране. Для многих сторонних лаунчеров это значение можно настроить точно, поэтому здесь у вас полный контроль.</string>
+    <string name="theme_corner_radius_dialog_confirm">Понятно</string>
+</resources>

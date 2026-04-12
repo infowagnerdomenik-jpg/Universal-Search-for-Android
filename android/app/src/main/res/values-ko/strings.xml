@@ -1,0 +1,46 @@
+<resources>
+    <string name="app_name">검색</string>
+    <string name="widget_settings_title">위젯 설정</string>
+    <string name="searchbar_settings_card_title">위젯 설정</string>
+    <string name="searchbar_settings_card_subtitle">검색창 구성</string>
+    <string name="settings_google_lens_subtitle">검색창에 Lens 표시</string>
+    <string name="voice_search_title">음성 검색</string>
+    <string name="settings_voice_search_subtitle">음성 입력 활성화</string>
+    <string name="settings_gemini_subtitle">기본 검색 대신 Gemini 사용</string>
+    <string name="button_apply">적용</string>
+    <string name="navigate_back_description">뒤로</string>
+    <string name="searchbar_detail_screen_title">검색창</string>
+    <string name="title_theme_settings">테마 설정</string>
+    <string name="theme_screen_title">테마 &amp; 디자인</string>
+
+    <string name="theme_section_color">테마 &amp; 색상</string>
+    <string name="theme_section_brightness">밝기</string>
+    <string name="theme_mode_auto_short">자동</string>
+    <string name="theme_mode_day_short">낮</string>
+    <string name="theme_mode_night_short">밤</string>
+
+    <string name="theme_system">시스템</string>
+    <string name="theme_standard">기본</string>
+    <string name="theme_blue">파란색</string>
+    <string name="theme_green">초록색</string>
+    <string name="theme_red">빨간색</string>
+
+    <string name="settings_new_design_icon_dialog_title">아이콘 선택</string>
+    <string name="settings_new_design_icon_music">음악</string>
+    <string name="settings_new_design_icon_subtitle">아이콘 디자인 변경</string>
+    <string name="settings_widget_design_title">위젯 디자인</string>
+    <string name="settings_widget_design_subtitle">색상 및 외관 변경</string>
+
+    <string name="theme_amoled_title">AMOLED 모드</string>
+    <string name="theme_amoled_subtitle">OLED 화면을 위한 완벽한 검정색</string>
+    <string name="theme_new_design_title">새 디자인</string>
+    <string name="theme_new_design_subtitle">검색창의 현대적인 외관</string>
+    <string name="theme_no_background_title">배경 없음</string>
+    <string name="theme_no_background_subtitle">위젯 투명하게 만들기</string>
+    <string name="theme_transparency_title">투명도</string>
+    <string name="theme_corner_radius_title">모서리 반경</string>
+    <string name="theme_corner_radius_info_desc">모서리 반경 정보 표시</string>
+    <string name="theme_corner_radius_dialog_title">모서리 반경</string>
+    <string name="theme_corner_radius_dialog_text">홈 화면에서 가장 잘 보이는 값을 선택하세요. 많은 커스텀 런처에서 이 값을 정밀하게 설정할 수 있으므로 여기서 완전한 제어권을 가질 수 있습니다.</string>
+    <string name="theme_corner_radius_dialog_confirm">확인</string>
+</resources>

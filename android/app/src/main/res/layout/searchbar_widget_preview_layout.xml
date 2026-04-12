@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/transparent"
+    android:padding="20dp">
+
+    <FrameLayout
+        android:id="@+id/widget_root"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_gravity="center"
+        android:background="@drawable/searchbar_background"
+        android:padding="6dp"
+        android:clipToOutline="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <FrameLayout
+                android:id="@+id/main_pill_container"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/searchbar_background2"
+                android:clipToOutline="true">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:paddingHorizontal="12dp">
+
+                    <ImageView
+                        android:id="@+id/icon_launcher"
+                        android:layout_width="22dp"
+                        android:layout_height="22dp"
+                        android:contentDescription="@string/search_icon_content_description"
+                        android:src="@drawable/ic_search_preview" />
+
+                    <FrameLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1" />
+
+                    <ImageView
+                        android:id="@+id/icon_mic"
+                        android:layout_width="22dp"
+                        android:layout_height="22dp"
+                        android:layout_marginEnd="12dp"
+                        android:contentDescription="@string/mic_icon_content_description"
+                        android:src="@drawable/ic_mic_preview" />
+
+                    <ImageView
+                        android:id="@+id/icon_lens"
+                        android:layout_width="22dp"
+                        android:layout_height="22dp"
+                        android:src="@drawable/ic_lens_white" />
+                </LinearLayout>
+            </FrameLayout>
+
+            <FrameLayout
+                android:id="@+id/split_gap"
+                android:layout_width="8dp"
+                android:layout_height="match_parent" />
+
+            <FrameLayout
+                android:id="@+id/circle_pill_container"
+                android:layout_width="44dp"
+                android:layout_height="match_parent"
+                android:background="@drawable/searchbar_background_circle"
+                android:clipToOutline="true">
+
+                <ImageView
+                    android:id="@+id/icon_plus"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_music_preview" />
+            </FrameLayout>
+
+        </LinearLayout>
+    </FrameLayout>
+
+</FrameLayout>
