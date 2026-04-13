@@ -34,7 +34,7 @@ This project is split into multiple repositories to maintain strict separation o
 
 | Component | Source Code | Direct Download |
 | :--- | :--- | :--- |
-| **Main Search App** | [Current Repository](#) | [![Download Main App](https://img.shields.io/badge/Download-Coming_Soon-lightgrey?style=for-the-badge)](#) |
+| **Main Search App** | [Current Repository](https://github.com/infowagnerdomenik-jpg/Universal-Search-for-Android) | [![Download Main App](https://img.shields.io/badge/Download-First_Release-02569B?style=for-the-badge&logo=github)](https://github.com/infowagnerdomenik-jpg/Universal-Search-for-Android/releases/tag/First_Release) |
 | **File Companion** | [View Repository](https://github.com/infowagnerdomenik-jpg/Search-Files-Companion) | [![Download File Companion](https://img.shields.io/badge/Download-First_Release-02569B?style=for-the-badge&logo=github)](https://github.com/infowagnerdomenik-jpg/Search-Files-Companion/releases/tag/First_Release) |
 | **Internet Companion** | [View Repository](https://github.com/infowagnerdomenik-jpg/Search-Internet-Companion) | [![Download Internet Companion](https://img.shields.io/badge/Download-First_Release-02569B?style=for-the-badge&logo=github)](https://github.com/infowagnerdomenik-jpg/Search-Internet-Companion/releases/tag/First_Release) |
 
