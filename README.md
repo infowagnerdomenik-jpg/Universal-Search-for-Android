@@ -1,5 +1,7 @@
 <div align="center">
-  <h1>🔵 Universal Search</h1>
+  <img src="https://raw.githubusercontent.com/infowagnerdomenik-jpg/Universal-Search-for-Android/main/assets/icons/original/Search_App_Icon.svg" width="120" alt="Universal Search Icon">
+  
+  <h1>Universal Search</h1>
   <p><b>A privacy-first, modular universal search engine for Android.</b></p>
   
   [![Android Support](https://img.shields.io/badge/Android-14_to_16_QPR2_(API_34--36.1)-3DDC84?style=for-the-badge&logo=android)](https://www.android.com/)
