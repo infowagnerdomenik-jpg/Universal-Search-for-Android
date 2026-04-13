@@ -301,6 +301,17 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver, Ro
                                         final uri = Uri.parse(urlString);
 
                                         try {
+                                          if (provider.packageName != null && (provider.id == 'gemini' || provider.id == 'claude' || provider.id == 'chatgpt')) {
+                                            const platform = MethodChannel('de.search.dw.search/internet');
+                                            final l10n = AppLocalizations.of(context);
+                                            final bool success = await platform.invokeMethod('launchExternalAiApp', {
+                                              'package': provider.packageName,
+                                              'query': query,
+                                              'toast': l10n.get('toast_app_not_installed'),
+                                            });
+                                            if (success) return;
+                                          }
+
                                           await launchUrl(
                                             uri,
                                             mode: quickController.openInApp 
@@ -339,8 +350,9 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver, Ro
                                                 ],
                                               ),
                                               padding: EdgeInsets.all(
-                                                provider.id == 'youtube' ? 8 : 
-                                                (provider.id == 'maps' || provider.id == 'osm') ? 9 : 7
+                                                provider.id == 'youtube' ? 8 :
+                                                (provider.id == 'maps' || provider.id == 'osm') ? 9 :
+                                                (provider.id == 'playstore' || provider.id == 'claude' || provider.id == 'gemini') ? 0 : 7
                                               ),
                                               child: SvgPicture.asset(
                                                 provider.assetIcon,

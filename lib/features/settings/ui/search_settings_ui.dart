@@ -373,9 +373,21 @@ class _SearchSettingsUIState extends State<SearchSettingsUI> {
                                             if (provider.id == 'chatgpt')
                                               Container(width: 36, height: 36, decoration: BoxDecoration(color: eonbg, shape: BoxShape.circle), padding: const EdgeInsets.all(4), child: SvgPicture.asset(provider.assetIcon, colorFilter: ColorFilter.mode(ebgInverse, BlendMode.srcIn), fit: BoxFit.contain))
                                             else
-                                              Container(width: 36, height: 36, decoration: BoxDecoration(color: provider.id == 'amazon' ? Colors.white : ebg, shape: BoxShape.circle), padding: EdgeInsets.all(provider.id == 'youtube' ? 7 : (provider.id == 'maps' || provider.id == 'osm') ? 8 : 6), child: SvgPicture.asset(provider.assetIcon, colorFilter: provider.id == 'spotify' ? const ColorFilter.mode(Color(0xFF1ED760), BlendMode.srcIn) : null, fit: BoxFit.contain)),
+                                              Container(width: 36, height: 36, decoration: BoxDecoration(color: provider.id == 'amazon' ? Colors.white : ebg, shape: BoxShape.circle), padding: EdgeInsets.all(provider.id == 'youtube' ? 7 : (provider.id == 'maps' || provider.id == 'osm') ? 8 : (provider.id == 'playstore' || provider.id == 'claude' || provider.id == 'gemini') ? 0 : 6), child: SvgPicture.asset(provider.assetIcon, colorFilter: provider.id == 'spotify' ? const ColorFilter.mode(Color(0xFF1ED760), BlendMode.srcIn) : null, fit: BoxFit.contain)),
                                             const SizedBox(width: 12),
-                                            Expanded(child: Text(provider.name, style: TextStyle(color: eonbg, fontSize: 15, fontWeight: isEnabled ? FontWeight.w500 : FontWeight.normal))),
+                                            Expanded(
+                                              child: Column(
+                                                crossAxisAlignment: CrossAxisAlignment.start,
+                                                children: [
+                                                  Text(provider.name, style: TextStyle(color: eonbg, fontSize: 15, fontWeight: isEnabled ? FontWeight.w500 : FontWeight.normal)),
+                                                  if (provider.id == 'gemini' || provider.id == 'claude' || provider.id == 'chatgpt')
+                                                    Text(
+                                                      l10n.get('quick_search_app_required'),
+                                                      style: TextStyle(color: eonbg.withOpacity(0.5), fontSize: 11),
+                                                    ),
+                                                ],
+                                              ),
+                                            ),
                                             Switch(
                                               value: isEnabled,
                                               thumbColor: WidgetStateProperty.resolveWith((states) => states.contains(WidgetState.selected) ? esv : eonsv),
@@ -505,7 +517,7 @@ class _SearchSettingsUIState extends State<SearchSettingsUI> {
                                                   padding: const EdgeInsets.only(right: 6),
                                                   child: p.id == 'chatgpt' 
                                                     ? Container(width: 24, height: 24, decoration: BoxDecoration(color: eonbg, shape: BoxShape.circle), padding: const EdgeInsets.all(3), child: SvgPicture.asset(p.assetIcon, colorFilter: ColorFilter.mode(ebgInverse, BlendMode.srcIn), fit: BoxFit.contain))
-                                                    : Container(width: 24, height: 24, decoration: BoxDecoration(color: p.id == 'amazon' ? Colors.white : ebg, shape: BoxShape.circle), padding: EdgeInsets.all(p.id == 'youtube' ? 3 : (p.id == 'maps' || p.id == 'osm') ? 5 : 4), child: SvgPicture.asset(p.assetIcon, colorFilter: p.id == 'spotify' ? const ColorFilter.mode(Color(0xFF1ED760), BlendMode.srcIn) : null, fit: BoxFit.contain)),
+                                                    : Container(width: 24, height: 24, decoration: BoxDecoration(color: p.id == 'amazon' ? Colors.white : ebg, shape: BoxShape.circle), padding: EdgeInsets.all(p.id == 'youtube' ? 3 : (p.id == 'maps' || p.id == 'osm' || p.id == 'playstore') ? 5 : 4), child: SvgPicture.asset(p.assetIcon, colorFilter: p.id == 'spotify' ? const ColorFilter.mode(Color(0xFF1ED760), BlendMode.srcIn) : null, fit: BoxFit.contain)),
                                                 );
                                               },
                                             ),
