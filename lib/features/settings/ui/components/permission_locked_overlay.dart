@@ -5,6 +5,7 @@ import 'package:flutter/services.dart';
 import 'package:design_engine/layer4_ui/design_engine_ui.dart';
 
 import 'package:search/features/settings/ui/permissions_screen.dart';
+import 'package:search/l10n/app_localizations.dart';
 
 class PermissionLockedOverlay extends StatelessWidget {
   final Widget child;
@@ -28,6 +29,7 @@ class PermissionLockedOverlay extends StatelessWidget {
     final Color cf3 = context.esurfacecontainerhigh;   // ehemals cf3
     final Color txt1 = context.eonsurface;             // ehemals txt1
     final Color txt2 = context.eonsurfacevariant;      // ehemals txt2
+    final l10n = AppLocalizations.of(context);
 
     showDialog(
       context: context,
@@ -38,17 +40,19 @@ class PermissionLockedOverlay extends StatelessWidget {
           children: [
             Icon(Icons.lock_person_outlined, color: cf3),
             const SizedBox(width: 12),
-            Text("Berechtigung", style: TextStyle(color: txt1)),
+            Text(l10n.get('permission_dialog_title'), style: TextStyle(color: txt1)),
           ],
         ),
         content: Text(
-          "Um den $featureName zu nutzen, wird eine Berechtigung benötigt.\n\n$description",
+          l10n.get('permission_dialog_description')
+              .replaceAll('{featureName}', featureName)
+              .replaceAll('{description}', description),
           style: TextStyle(color: txt1.withOpacity(0.7), fontSize: 14, height: 1.4),
         ),
         actions: [
           TextButton(
             onPressed: () => Navigator.pop(context),
-            child: Text("Abbrechen", style: TextStyle(color: txt1.withOpacity(0.5))),
+            child: Text(l10n.get('btn_cancel'), style: TextStyle(color: txt1.withOpacity(0.5))),
           ),
           ElevatedButton(
             onPressed: () async {
@@ -66,7 +70,7 @@ class PermissionLockedOverlay extends StatelessWidget {
                 shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
                 elevation: 0,
             ),
-            child: const Text("Zu den Einstellungen"),
+            child: Text(l10n.get('btn_go_to_settings')),
           ),
         ],
       ),
@@ -81,6 +85,8 @@ class PermissionLockedOverlay extends StatelessWidget {
     final Color txt2 = context.eonsurfacevariant;
     final Color cf3 = context.esurfacecontainerhigh;
     final bool isDark = Theme.of(context).brightness == Brightness.dark;
+
+    final l10n = AppLocalizations.of(context);
 
     return Stack(
       alignment: Alignment.center,
@@ -115,7 +121,7 @@ class PermissionLockedOverlay extends StatelessWidget {
                     Icon(Icons.lock_outline, color: txt2, size: 16),
                     const SizedBox(width: 8),
                     Text(
-                      "Aktivieren",
+                      l10n.get('btn_activate'),
                       style: TextStyle(
                         color: txt2,
                         fontSize: 13,

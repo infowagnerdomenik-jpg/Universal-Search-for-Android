@@ -13,6 +13,7 @@ import 'package:search/features/settings/ui/home_settings_screen.dart';
 import 'package:search/features/settings/ui/permissions_screen.dart';
 import 'package:search/features/settings/ui/about_screen.dart';
 import 'package:search/features/settings/ui/language_settings_screen.dart';
+import 'package:search/features/settings/logic/update_controller.dart';
 
 // --- LOCALIZATION ---
 import 'package:search/l10n/app_localizations.dart';
@@ -161,16 +162,25 @@ class SettingsScreen extends StatelessWidget {
                   },
                 ),
                 const SizedBox(height: 3),
-                _buildSettingsCard(
-                  context: context,
-                  esv: esv,
-                  eonbg: eonbg,
-                  icon: Icons.info_outline,
-                  titleKey: 'about_title',
-                  shape: botShape,
-                  onTap: () {
-                    HapticFeedback.lightImpact();
-                    Navigator.push(context, MaterialPageRoute(builder: (context) => const AboutScreen()));
+                ListenableBuilder(
+                  listenable: UpdateController(),
+                  builder: (context, child) {
+                    final isUpdate = UpdateController().isUpdateAvailable;
+                    return _buildSettingsCard(
+                      context: context,
+                      esv: esv,
+                      eonbg: eonbg,
+                      icon: Icons.info_outline,
+                      titleKey: 'about_title',
+                      subtitleKey: isUpdate ? 'update_available' : null,
+                      subtitleColor: isUpdate ? context.eprimary : null,
+                      showDot: isUpdate,
+                      shape: botShape,
+                      onTap: () {
+                        HapticFeedback.lightImpact();
+                        Navigator.push(context, MaterialPageRoute(builder: (context) => const AboutScreen()));
+                      },
+                    );
                   },
                 ),
               ] else ...[
@@ -189,16 +199,25 @@ class SettingsScreen extends StatelessWidget {
                   },
                 ),
                 const SizedBox(height: 3),
-                _buildSettingsCard(
-                  context: context,
-                  esv: esv,
-                  eonbg: eonbg,
-                  icon: Icons.info_outline,
-                  titleKey: 'about_title',
-                  shape: botShape,
-                  onTap: () {
-                    HapticFeedback.lightImpact();
-                    Navigator.push(context, MaterialPageRoute(builder: (context) => const AboutScreen()));
+                ListenableBuilder(
+                  listenable: UpdateController(),
+                  builder: (context, child) {
+                    final isUpdate = UpdateController().isUpdateAvailable;
+                    return _buildSettingsCard(
+                      context: context,
+                      esv: esv,
+                      eonbg: eonbg,
+                      icon: Icons.info_outline,
+                      titleKey: 'about_title',
+                      subtitleKey: isUpdate ? 'update_available' : null,
+                      subtitleColor: isUpdate ? context.eprimary : null,
+                      showDot: isUpdate,
+                      shape: botShape,
+                      onTap: () {
+                        HapticFeedback.lightImpact();
+                        Navigator.push(context, MaterialPageRoute(builder: (context) => const AboutScreen()));
+                      },
+                    );
                   },
                 ),
               ],
@@ -218,6 +237,8 @@ class SettingsScreen extends StatelessWidget {
     required IconData icon,
     required String titleKey,
     String? subtitleKey,
+    Color? subtitleColor,
+    bool showDot = false,
     required BorderRadius shape,
     required VoidCallback onTap,
   }) {
@@ -243,7 +264,25 @@ class SettingsScreen extends StatelessWidget {
             padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
             child: Row(
               children: [
-                AppFallbackIcon(icon: icon, size: 36, iconSize: 20),
+                Stack(
+                  children: [
+                    AppFallbackIcon(icon: icon, size: 36, iconSize: 20),
+                    if (showDot)
+                      Positioned(
+                        top: 0,
+                        right: 0,
+                        child: Container(
+                          width: 10,
+                          height: 10,
+                          decoration: BoxDecoration(
+                            color: context.eprimary,
+                            shape: BoxShape.circle,
+                            border: Border.all(color: esv, width: 2),
+                          ),
+                        ),
+                      ),
+                  ],
+                ),
                 const SizedBox(width: 16),
                 Expanded(
                   child: Column(
@@ -258,7 +297,11 @@ class SettingsScreen extends StatelessWidget {
                         const SizedBox(height: 2),
                         Text(
                           AppLocalizations.of(context).get(subtitleKey),
-                          style: TextStyle(color: eonbg.withOpacity(0.7), fontSize: 13),
+                          style: TextStyle(
+                            color: subtitleColor ?? eonbg.withOpacity(0.7), 
+                            fontSize: 13,
+                            fontWeight: subtitleColor != null ? FontWeight.bold : FontWeight.normal,
+                          ),
                           maxLines: 1,
                           overflow: TextOverflow.ellipsis,
                         ),

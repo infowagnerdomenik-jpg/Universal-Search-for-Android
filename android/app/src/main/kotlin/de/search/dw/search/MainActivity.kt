@@ -99,6 +99,14 @@ class MainActivity : FlutterActivity() {
                     }.start()
                 }
                 "isCompanionInstalled" -> result.success(isInternetCompanionInstalled())
+                "fetchVersion" -> {
+                    val owner = call.argument<String>("owner") ?: "infowagnerdomenik-jpg"
+                    val repo = call.argument<String>("repo") ?: ""
+                    Thread {
+                        val version = fetchVersionNative(owner, repo)
+                        runOnUiThread { result.success(version) }
+                    }.start()
+                }
                 else -> result.notImplemented()
             }
         }
@@ -264,6 +272,26 @@ class MainActivity : FlutterActivity() {
             android.util.Log.e("INTERNET_SEARCH", "Suggestion query failed: ${e.message}") 
         }
         return results
+    }
+
+    private fun fetchVersionNative(owner: String, repo: String): String? {
+        if (!isInternetCompanionInstalled()) return null
+        val uri = Uri.parse("content://de.search.companion.internet.dw.provider/version")
+            .buildUpon()
+            .appendQueryParameter("owner", owner)
+            .appendQueryParameter("repo", repo)
+            .build()
+        
+        return try {
+            contentResolver.query(uri, null, null, null, null)?.use { cursor ->
+                if (cursor.moveToFirst()) {
+                    cursor.getString(0)
+                } else null
+            }
+        } catch (e: Exception) { 
+            android.util.Log.e("INTERNET_SEARCH", "Version query failed: ${e.message}") 
+            null
+        }
     }
 
     private fun searchFilesNative(query: String): List<Map<String, Any?>> {

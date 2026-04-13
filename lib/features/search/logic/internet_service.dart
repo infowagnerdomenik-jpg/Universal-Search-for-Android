@@ -42,4 +42,15 @@ class InternetService {
       return [];
     }
   }
+
+  static Future<String?> fetchVersion({String owner = 'infowagnerdomenik-jpg', required String repo}) async {
+    try {
+      return await _channel.invokeMethod('fetchVersion', {
+        'owner': owner,
+        'repo': repo,
+      });
+    } catch (e) {
+      return null;
+    }
+  }
 }

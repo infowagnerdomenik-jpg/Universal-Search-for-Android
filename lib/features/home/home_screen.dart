@@ -33,6 +33,7 @@ import 'package:search/features/home/components/floating_keyboard_button.dart';
 import 'package:design_engine/layer4_ui/design_engine_ui.dart';
 
 import 'package:search/features/settings/logic/home_layout_controller.dart';
+import 'package:search/features/settings/logic/update_controller.dart';
 import 'package:search/features/search/logic/quick_search_controller.dart';
 import 'package:search/features/search/domain/models/quick_search_provider.dart';
 import 'package:search/l10n/app_localizations.dart';
@@ -422,22 +423,47 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver, Ro
                                 HapticFeedback.lightImpact();
                                 Navigator.push(context, MaterialPageRoute(builder: (context) => const SettingsScreen()));
                               },
-                              child: Container(
-                                width: 48,
-                                height: 48,
-                                decoration: BoxDecoration(
-                                  color: esv,
-                                  shape: BoxShape.circle,
-                                  boxShadow: isDark ? [] : [
-                                    BoxShadow(
-                                      color: Colors.black.withOpacity(0.08),
-                                      blurRadius: 10,
-                                      spreadRadius: -3,
-                                      offset: const Offset(-3, 0),
+                              child: ListenableBuilder(
+                                listenable: UpdateController(),
+                                builder: (context, child) {
+                                  final isUpdate = UpdateController().isUpdateAvailable;
+                                  return Container(
+                                    width: 48,
+                                    height: 48,
+                                    decoration: BoxDecoration(
+                                      color: esv,
+                                      shape: BoxShape.circle,
+                                      boxShadow: isDark ? [] : [
+                                        BoxShadow(
+                                          color: Colors.black.withOpacity(0.08),
+                                          blurRadius: 10,
+                                          spreadRadius: -3,
+                                          offset: const Offset(-3, 0),
+                                        ),
+                                      ],
                                     ),
-                                  ],
-                                ),
-                                child: Icon(Icons.settings_outlined, color: eonbg, size: 24),
+                                    child: Stack(
+                                      alignment: Alignment.center,
+                                      children: [
+                                        Icon(Icons.settings_outlined, color: eonbg, size: 24),
+                                        if (isUpdate)
+                                          Positioned(
+                                            top: 12,
+                                            right: 12,
+                                            child: Container(
+                                              width: 10,
+                                              height: 10,
+                                              decoration: BoxDecoration(
+                                                color: context.eprimary,
+                                                shape: BoxShape.circle,
+                                                border: Border.all(color: esv, width: 2),
+                                              ),
+                                            ),
+                                          ),
+                                      ],
+                                    ),
+                                  );
+                                },
                               ),
                             ),
                           ],

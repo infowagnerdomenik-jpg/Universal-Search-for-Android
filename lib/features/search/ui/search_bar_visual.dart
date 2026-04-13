@@ -4,7 +4,6 @@ import 'package:flutter_svg/flutter_svg.dart';
 
 import 'package:search/features/search/logic/search_settings_controller.dart';
 import 'package:search/features/search/ui/components/engine_switcher_sheet.dart';
-
 // --- NEUE DESIGN ENGINE IMPORTE ---
 import 'package:design_engine/layer3_logic/design_engine_controller.dart';
 import 'package:design_engine/layer4_ui/design_engine_ui.dart';
@@ -73,7 +72,7 @@ class SearchBarVisual extends StatelessWidget {
                   );
                 },
                 child: Container(
-                  margin: const EdgeInsets.only(top: 4), // Nach oben ausgerichtet + Ausgleich für Text-Padding
+                  margin: const EdgeInsets.only(top: 4),
                   padding: const EdgeInsets.all(8),
                   color: Colors.transparent,
                   child: SizedBox(

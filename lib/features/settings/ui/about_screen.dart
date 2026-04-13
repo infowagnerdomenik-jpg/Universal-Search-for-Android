@@ -8,9 +8,163 @@ import 'package:design_engine/layer3_logic/design_engine_controller.dart';
 import 'package:design_engine/layer4_ui/design_engine_ui.dart';
 
 import 'package:search/l10n/app_localizations.dart';
+import 'package:search/features/search/logic/internet_service.dart';
+import 'package:search/features/search/logic/file_service.dart';
 
-class AboutScreen extends StatelessWidget {
+class AboutScreen extends StatefulWidget {
   const AboutScreen({super.key});
+
+  @override
+  State<AboutScreen> createState() => _AboutScreenState();
+}
+
+class _AboutScreenState extends State<AboutScreen> {
+  static const String appVersion = 'Alpha 1.0.1 Github';
+  static const _permissionChannel = MethodChannel('de.search.dw.search/permissions');
+  static const String _internetPermissionName = "de.search.companion.internet.dw.INTERNET_ACCESS";
+
+  // Status-Variablen für Updates
+  String _searchAppStatus = '...';
+  String _fileCompanionStatus = '...';
+  String _internetCompanionStatus = '...';
+
+  Color _searchAppStatusColor = Colors.grey;
+  Color _fileCompanionStatusColor = Colors.grey;
+  Color _internetCompanionStatusColor = Colors.grey;
+
+  bool _isInternetCompanionInstalled = false;
+  bool _isInternetPermissionGranted = false;
+
+  @override
+  void initState() {
+    super.initState();
+    _checkAllUpdates();
+  }
+
+  Future<void> _checkAllUpdates() async {
+    _isInternetCompanionInstalled = await InternetService.isCompanionInstalled();
+    try {
+      _isInternetPermissionGranted = await _permissionChannel.invokeMethod('checkPermission', {'permission': _internetPermissionName}) ?? false;
+    } catch (_) {
+      _isInternetPermissionGranted = false;
+    }
+    final l10n = AppLocalizations.of(context);
+
+    if (!_isInternetCompanionInstalled) {
+      if (mounted) {
+        setState(() {
+          _searchAppStatus = l10n.get('update_status_companion_missing');
+          _searchAppStatusColor = Colors.orange;
+          _fileCompanionStatus = l10n.get('update_status_companion_missing');
+          _fileCompanionStatusColor = Colors.orange;
+          _internetCompanionStatus = l10n.get('update_status_companion_missing');
+          _internetCompanionStatusColor = Colors.orange;
+        });
+      }
+      return;
+    }
+
+    if (!_isInternetPermissionGranted) {
+      if (mounted) {
+        setState(() {
+          _searchAppStatus = l10n.get('update_status_permission_missing');
+          _searchAppStatusColor = Colors.orange;
+          _fileCompanionStatus = l10n.get('update_status_permission_missing');
+          _fileCompanionStatusColor = Colors.orange;
+          _internetCompanionStatus = l10n.get('update_status_permission_missing');
+          _internetCompanionStatusColor = Colors.orange;
+        });
+      }
+      return;
+    }
+
+    // 1. Search App Check
+    await _checkUpdate(
+      repo: 'Universal-Search-for-Android',
+      localVersion: appVersion,
+      onResult: (status, color) => setState(() {
+        _searchAppStatus = status;
+        _searchAppStatusColor = color;
+      }),
+    );
+
+    // 2. File Companion Check
+    final fileInstalled = await FileService.isCompanionInstalled();
+    if (!fileInstalled) {
+      if (mounted) {
+        setState(() {
+          _fileCompanionStatus = l10n.get('update_status_not_installed');
+          _fileCompanionStatusColor = Colors.orange;
+        });
+      }
+    } else {
+      await _checkUpdate(
+        repo: 'Search-Files-Companion',
+        localVersion: appVersion,
+        onResult: (status, color) => setState(() {
+          _fileCompanionStatus = status;
+          _fileCompanionStatusColor = color;
+        }),
+      );
+    }
+
+    // 3. Internet Companion Check
+    await _checkUpdate(
+      repo: 'Search-Internet-Companion',
+      localVersion: appVersion,
+      onResult: (status, color) => setState(() {
+        _internetCompanionStatus = status;
+        _internetCompanionStatusColor = color;
+      }),
+    );
+  }
+
+  Future<void> _checkUpdate({
+    required String repo,
+    required String localVersion,
+    required Function(String, Color) onResult,
+  }) async {
+    final latest = await InternetService.fetchVersion(repo: repo);
+    if (!mounted) return;
+
+    final l10n = AppLocalizations.of(context);
+    
+    if (latest == null) {
+      onResult(l10n.get('update_status_up_to_date'), Colors.green);
+      return;
+    }
+
+    final cleanLocal = localVersion.toLowerCase().replaceAll('alpha', '').replaceAll('(no github)', '').trim();
+    final cleanLatest = latest.toLowerCase().replaceAll('v', '').replaceAll('alpha', '').trim();
+
+    if (cleanLatest == cleanLocal || cleanLocal.contains(cleanLatest)) {
+      onResult(l10n.get('update_status_up_to_date'), Colors.green);
+    } else {
+      onResult(l10n.get('update_status_available'), Colors.blue);
+    }
+  }
+
+  void _showUpdateInfoDialog() {
+    final l10n = AppLocalizations.of(context);
+    showDialog(
+      context: context,
+      builder: (context) => AlertDialog(
+        backgroundColor: context.esurfacevariant,
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(24)),
+        title: Text(l10n.get('update_info_title'), style: TextStyle(color: context.eonbackground)),
+        content: Text(
+          l10n.get('update_info_text'),
+          style: TextStyle(color: context.eonbackground.withOpacity(0.8), height: 1.4),
+        ),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.pop(context),
+            child: Text(l10n.get('btn_ok'), style: TextStyle(color: context.eprimary, fontWeight: FontWeight.bold)),
+          ),
+        ],
+      ),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +177,6 @@ class AboutScreen extends StatelessWidget {
     final Color eonbg = context.eonbackground;
     final Color eonsv = context.eonsurfacevariant;
 
-    const String appVersion = 'Alpha 1.0.0 (No Github)';
     const singleShape = BorderRadius.all(Radius.circular(28));
 
     return Scaffold(
@@ -103,7 +256,20 @@ class AboutScreen extends StatelessWidget {
                     const SizedBox(height: 24),
 
                     // --- Updates Section ---
-                    _buildSectionHeader(l10n.get('updates_title'), eonbg),
+                    Row(
+                      children: [
+                        Expanded(child: _buildSectionHeader(l10n.get('updates_title'), eonbg)),
+                        if (!_isInternetCompanionInstalled || !_isInternetPermissionGranted)
+                          Padding(
+                            padding: const EdgeInsets.only(right: 16, bottom: 8),
+                            child: InkWell(
+                              onTap: _showUpdateInfoDialog,
+                              borderRadius: BorderRadius.circular(12),
+                              child: Icon(Icons.info_outline, size: 18, color: eonbg.withOpacity(0.4)),
+                            ),
+                          ),
+                      ],
+                    ),
                     _buildSectionCard(
                       shape: singleShape,
                       esv: esv,
@@ -113,25 +279,28 @@ class AboutScreen extends StatelessWidget {
                           _buildInfoRow(
                             icon: Icons.update,
                             title: l10n.get('update_search_app'),
-                            subtitle: l10n.get('update_status_up_to_date'),
+                            subtitle: _searchAppStatus,
                             eonbg: eonbg,
-                            eonsv: Colors.green,
+                            eonsv: _searchAppStatusColor,
+                            onTap: () => launchUrl(Uri.parse('https://github.com/infowagnerdomenik-jpg/Universal-Search-for-Android/releases/'), mode: LaunchMode.externalApplication),
                           ),
                           Divider(height: 1, color: eonbg.withOpacity(0.05), indent: 60),
                           _buildInfoRow(
                             icon: Icons.folder_outlined,
                             title: l10n.get('update_file_companion'),
-                            subtitle: l10n.get('update_status_up_to_date'),
+                            subtitle: _fileCompanionStatus,
                             eonbg: eonbg,
-                            eonsv: Colors.green,
+                            eonsv: _fileCompanionStatusColor,
+                            onTap: () => launchUrl(Uri.parse('https://github.com/infowagnerdomenik-jpg/Search-Files-Companion/releases'), mode: LaunchMode.externalApplication),
                           ),
                           Divider(height: 1, color: eonbg.withOpacity(0.05), indent: 60),
                           _buildInfoRow(
                             icon: Icons.public,
                             title: l10n.get('update_internet_companion'),
-                            subtitle: l10n.get('update_status_up_to_date'),
+                            subtitle: _internetCompanionStatus,
                             eonbg: eonbg,
-                            eonsv: Colors.green,
+                            eonsv: _internetCompanionStatusColor,
+                            onTap: () => launchUrl(Uri.parse('https://github.com/infowagnerdomenik-jpg/Search-Internet-Companion/releases'), mode: LaunchMode.externalApplication),
                           ),
                         ],
                       ),
@@ -150,6 +319,7 @@ class AboutScreen extends StatelessWidget {
                           _buildGitHubRow(
                             title: '${l10n.get('about_github_title')}: ${l10n.get('app_name_title')}',
                             subtitle: l10n.get('about_github_sub'),
+                            url: 'https://github.com/infowagnerdomenik-jpg/Universal-Search-for-Android',
                             isDark: isDark,
                             eonbg: eonbg,
                             eonsv: eonsv,
@@ -158,6 +328,7 @@ class AboutScreen extends StatelessWidget {
                           _buildGitHubRow(
                             title: l10n.get('about_github_file_companion'),
                             subtitle: l10n.get('about_github_sub'),
+                            url: 'https://github.com/infowagnerdomenik-jpg/Search-Files-Companion',
                             isDark: isDark,
                             eonbg: eonbg,
                             eonsv: eonsv,
@@ -166,6 +337,16 @@ class AboutScreen extends StatelessWidget {
                           _buildGitHubRow(
                             title: l10n.get('about_github_internet_companion'),
                             subtitle: l10n.get('about_github_sub'),
+                            url: 'https://github.com/infowagnerdomenik-jpg/Search-Internet-Companion',
+                            isDark: isDark,
+                            eonbg: eonbg,
+                            eonsv: eonsv,
+                          ),
+                          Divider(height: 1, color: eonbg.withOpacity(0.05), indent: 60),
+                          _buildGitHubRow(
+                            title: l10n.get('about_github_design_engine'),
+                            subtitle: l10n.get('about_github_sub'),
+                            url: 'https://github.com/infowagnerdomenik-jpg/Design-Engine-Plug-In-for-the-search-app',
                             isDark: isDark,
                             eonbg: eonbg,
                             eonsv: eonsv,
@@ -279,38 +460,53 @@ class AboutScreen extends StatelessWidget {
   Widget _buildGitHubRow({
     required String title,
     required String subtitle,
+    required String url,
     required bool isDark,
     required Color eonbg,
     required Color eonsv,
   }) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 16),
-      child: Row(
-        children: [
-          SvgPicture.asset(
-            isDark 
-              ? 'assets/icons/dynamic/GitHub_Invertocat_White.svg'
-              : 'assets/icons/dynamic/GitHub_Invertocat_Black.svg',
-            width: 24,
-            height: 24,
-          ),
-          const SizedBox(width: 16),
-          Expanded(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  title,
-                  style: TextStyle(color: eonbg, fontWeight: FontWeight.w600, fontSize: 16),
+    return Material(
+      color: Colors.transparent,
+      child: InkWell(
+        onTap: () async {
+          final Uri uri = Uri.parse(url);
+          try {
+            await launchUrl(uri, mode: LaunchMode.externalApplication);
+          } catch (e) {
+            debugPrint("Fehler beim Öffnen von GitHub: $e");
+          }
+        },
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 16),
+          child: Row(
+            children: [
+              SvgPicture.asset(
+                isDark 
+                  ? 'assets/icons/dynamic/GitHub_Invertocat_White.svg'
+                  : 'assets/icons/dynamic/GitHub_Invertocat_Black.svg',
+                width: 24,
+                height: 24,
+              ),
+              const SizedBox(width: 16),
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      title,
+                      style: TextStyle(color: eonbg, fontWeight: FontWeight.w600, fontSize: 16),
+                    ),
+                    Text(
+                      subtitle,
+                      style: TextStyle(color: eonsv, fontSize: 13),
+                    ),
+                  ],
                 ),
-                Text(
-                  subtitle,
-                  style: TextStyle(color: eonsv, fontSize: 13),
-                ),
-              ],
-            ),
+              ),
+              Icon(Icons.chevron_right, color: eonbg.withOpacity(0.3)),
+            ],
           ),
-        ],
+        ),
       ),
     );
   }

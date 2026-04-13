@@ -10,6 +10,7 @@ import 'package:search/features/search/logic/file_cache.dart';
 import 'package:search/features/calendar/logic/calendar_cache.dart';
 import 'package:search/features/search/logic/quick_search_controller.dart';
 import 'package:search/features/settings/logic/home_layout_controller.dart';
+import 'package:search/features/settings/logic/update_controller.dart';
 import 'package:search/features/home/home_screen.dart';
 import 'package:design_engine/layer3_logic/design_engine_controller.dart';
 import 'package:search/l10n/app_localizations.dart';
@@ -41,12 +42,15 @@ void main() async {
   CalendarCache.init();
   FileCache.init();
 
+  UpdateController().checkUpdates();
+
   runApp(
     MultiProvider(
       providers: [
         ChangeNotifierProvider.value(value: designEngineController),
         ChangeNotifierProvider.value(value: QuickSearchController()),
         ChangeNotifierProvider.value(value: LanguageController()),
+        ChangeNotifierProvider.value(value: UpdateController()),
       ],
       child: const MyApp(),
     ),
