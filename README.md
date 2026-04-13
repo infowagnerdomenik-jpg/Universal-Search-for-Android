@@ -18,13 +18,25 @@ This project is built on the principle of maximum data isolation. The main searc
 
 Instead, the ecosystem relies on completely isolated **Companion Apps**:
 
-> 📂 **File Companion** <br>
+> 📂 **[File Companion](https://github.com/infowagnerdomenik-jpg/Search-Files-Companion)** <br>
 > Completely air-gapped. It has no internet permission. It only reads local files and passes non-sensitive metadata (file names and thumbnails) back to the main app.
 
-> 🌐 **Internet Companion** <br>
+> 🌐 **[Internet Companion](https://github.com/infowagnerdomenik-jpg/Search-Internet-Companion)** <br>
 > Handles web queries and suggestions. 
 
 *Don't trust the internet companion? Simply don't install it. The main app and local search will continue to work flawlessly.*
+
+---
+
+## 📦 Downloads & Ecosystem
+
+This project is split into multiple repositories to maintain strict separation of concerns. For the best experience, download the Main App and any Companions you wish to use.
+
+| Component | Source Code | Direct Download |
+| :--- | :--- | :--- |
+| **Main Search App** | [Current Repository](#) | [![Download Main App](https://img.shields.io/badge/Download-Coming_Soon-lightgrey?style=for-the-badge)](#) |
+| **File Companion** | [View Repository](https://github.com/infowagnerdomenik-jpg/Search-Files-Companion) | [![Download File Companion](https://img.shields.io/badge/Download-First_Release-02569B?style=for-the-badge&logo=github)](https://github.com/infowagnerdomenik-jpg/Search-Files-Companion/releases/tag/First_Release) |
+| **Internet Companion** | [View Repository](https://github.com/infowagnerdomenik-jpg/Search-Internet-Companion) | [![Download Internet Companion](https://img.shields.io/badge/Download-First_Release-02569B?style=for-the-badge&logo=github)](https://github.com/infowagnerdomenik-jpg/Search-Internet-Companion/releases/tag/First_Release) |
 
 ---
 
@@ -36,7 +48,7 @@ This app utilizes custom intents and **Signature Level Protection** for all comm
 > **Building from source:**
 > Because of this strict security model, the Main App and the Companion Apps can only communicate if they are signed with the **exact same keystore**. If you compile this project yourself, you must build and sign all required companion apps with your own key. Modifying or injecting third-party code into the communication bridge will result in a connection block.
 
-For most users, it is highly recommended to download the pre-compiled, officially signed APKs from the **[Releases](#)** page.
+For most users, it is highly recommended to use the pre-compiled, officially signed APKs from the table above.
 
 ---
 
@@ -56,7 +68,7 @@ For most users, it is highly recommended to download the pre-compiled, officiall
   <tr>
     <td width="50%">
       <b>🎨 Custom Design Engine</b><br>
-      A massive custom UI engine allows for granular control over widget transparency, corner radius, and layout order (drag-and-drop). Includes a true AMOLED dark mode.
+      A massive custom UI engine allows for granular control over widget transparency, corner radius, and layout order. Powered by our open-source <b><a href="https://github.com/infowagnerdomenik-jpg/Design-Engine-Plug-In-for-the-search-app">Flutter Design Engine Plug-In</a></b> (Code-only plugin for developers). Includes a true AMOLED dark mode.
     </td>
     <td width="50%">
       <b>🌊 Modern Navigation</b><br>
