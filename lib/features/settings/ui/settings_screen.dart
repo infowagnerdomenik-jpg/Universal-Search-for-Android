@@ -177,8 +177,12 @@ class SettingsScreen extends StatelessWidget {
                       showDot: isUpdate,
                       shape: botShape,
                       onTap: () {
-                        HapticFeedback.lightImpact();
-                        Navigator.push(context, MaterialPageRoute(builder: (context) => const AboutScreen()));
+                        try {
+                          HapticFeedback.lightImpact();
+                          Navigator.push(context, MaterialPageRoute(builder: (_) => const AboutScreen()));
+                        } catch (_) {
+                          Navigator.push(context, MaterialPageRoute(builder: (_) => const AboutScreen()));
+                        }
                       },
                     );
                   },
@@ -214,8 +218,12 @@ class SettingsScreen extends StatelessWidget {
                       showDot: isUpdate,
                       shape: botShape,
                       onTap: () {
-                        HapticFeedback.lightImpact();
-                        Navigator.push(context, MaterialPageRoute(builder: (context) => const AboutScreen()));
+                        try {
+                          HapticFeedback.lightImpact();
+                          Navigator.push(context, MaterialPageRoute(builder: (_) => const AboutScreen()));
+                        } catch (_) {
+                          Navigator.push(context, MaterialPageRoute(builder: (_) => const AboutScreen()));
+                        }
                       },
                     );
                   },

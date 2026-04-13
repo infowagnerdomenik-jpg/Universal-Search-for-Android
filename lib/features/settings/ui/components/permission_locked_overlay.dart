@@ -33,7 +33,7 @@ class PermissionLockedOverlay extends StatelessWidget {
 
     showDialog(
       context: context,
-      builder: (context) => AlertDialog(
+      builder: (dialogContext) => AlertDialog(
         backgroundColor: cf2,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(24)),
         title: Row(
@@ -51,16 +51,16 @@ class PermissionLockedOverlay extends StatelessWidget {
         ),
         actions: [
           TextButton(
-            onPressed: () => Navigator.pop(context),
+            onPressed: () => Navigator.pop(dialogContext),
             child: Text(l10n.get('btn_cancel'), style: TextStyle(color: txt1.withOpacity(0.5))),
           ),
           ElevatedButton(
             onPressed: () async {
               HapticFeedback.mediumImpact();
-              Navigator.pop(context);
+              Navigator.pop(dialogContext);
               await Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => const PermissionsScreen()),
+                MaterialPageRoute(builder: (_) => const PermissionsScreen()),
               );
               if (onRefresh != null) onRefresh!();
             },

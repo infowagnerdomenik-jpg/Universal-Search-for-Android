@@ -107,6 +107,44 @@ class MainActivity : FlutterActivity() {
                         runOnUiThread { result.success(version) }
                     }.start()
                 }
+                "launchExternalAiApp" -> {
+                    val packageName = call.argument<String>("package") ?: ""
+                    val query = call.argument<String>("query") ?: ""
+                    val toastMessage = call.argument<String>("toast") ?: "App not installed"
+                    
+                    val isInstalled = try {
+                        packageManager.getPackageInfo(packageName, 0)
+                        true
+                    } catch (e: Exception) { false }
+
+                    if (isInstalled) {
+                        val intent = Intent(Intent.ACTION_SEND).apply {
+                            type = "text/plain"
+                            putExtra(Intent.EXTRA_TEXT, query)
+                            setPackage(packageName)
+                            addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+                        }
+                        startActivity(intent)
+                        result.success(true)
+                    } else {
+                        // Toast zeigen
+                        android.widget.Toast.makeText(this, toastMessage, android.widget.Toast.LENGTH_LONG).show()
+                        
+                        // Play Store öffnen
+                        try {
+                            val marketIntent = Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=$packageName")).apply {
+                                addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+                            }
+                            startActivity(marketIntent)
+                        } catch (e: Exception) {
+                            val webIntent = Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id=$packageName")).apply {
+                                addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+                            }
+                            startActivity(webIntent)
+                        }
+                        result.success(false)
+                    }
+                }
                 else -> result.notImplemented()
             }
         }

@@ -78,6 +78,8 @@ const Map<String, String> langEn = {
   'quick_search_header': 'Quick Search',
   'quick_search_open_in_app_label': 'Open in App',
   'quick_search_open_in_app_info': 'Determines if quick searches open inside the app or in an external browser.',
+  'quick_search_app_required': 'App required',
+  'toast_app_not_installed': 'App not installed. Redirecting to Play Store...',
   'disabled': 'Disabled',
 
   // --- ADDITIONAL ---
@@ -124,6 +126,15 @@ const Map<String, String> langEn = {
   'calendar_selection_label': 'Visible Calendars',
   'calendar_none_selected': 'No calendars selected',
   'calendar_none_selected_hint': 'Please select at least one calendar in the settings.',
+  'search_date_today': 'today',
+  'search_date_tomorrow': 'tomorrow',
+  'search_day_monday': 'monday',
+  'search_day_tuesday': 'tuesday',
+  'search_day_wednesday': 'wednesday',
+  'search_day_thursday': 'thursday',
+  'search_day_friday': 'friday',
+  'search_day_saturday': 'saturday',
+  'search_day_sunday': 'sunday',
 
   // --- THEME SETTINGS ---
   'theme_title': 'Theme Settings',

@@ -7,6 +7,7 @@ import 'package:design_engine/layer4_ui/design_engine_ui.dart';
 
 import 'package:search/features/calendar/logic/calendar_service.dart';
 import 'package:search/features/calendar/logic/calendar_cache.dart';
+import 'package:search/features/calendar/logic/calendar_search_helper.dart';
 import 'package:search/features/search/logic/search_settings_controller.dart';
 import 'package:search/features/search/logic/search_status_controller.dart';
 import 'package:search/l10n/app_localizations.dart';
@@ -48,11 +49,24 @@ class _CalendarSearchComponentState extends State<CalendarSearchComponent> {
     final enabledIds = settings.enabledCalendarIds;
     final limit = settings.calendarLimit;
 
+    // 1. Datum / Wochentag Erkennung
+    final List<DateTimeRange>? ranges = CalendarSearchHelper.parseSearchQuery(q, context);
+
     final results = CalendarCache.allEventsNotifier.value.where((event) {
       if (enabledIds.isNotEmpty && !enabledIds.contains(event.calendarId)) return false;
-      final title = event.title?.toLowerCase() ?? '';
-      return title.contains(q);
+      
+      if (ranges != null) {
+        // Suche nach Datum/Wochentag
+        return CalendarSearchHelper.isEventInRange(event, ranges);
+      } else {
+        // Klassische Textsuche
+        final title = event.title?.toLowerCase() ?? '';
+        return title.contains(q);
+      }
     }).toList();
+
+    // Sortierung ist im Cache meist schon nach Zeit, aber zur Sicherheit hier nochmal
+    results.sort((a, b) => (a.start ?? DateTime.now()).compareTo(b.start ?? DateTime.now()));
 
     setState(() {
       _searchResults = results.take(limit).toList();

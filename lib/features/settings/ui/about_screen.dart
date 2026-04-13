@@ -10,6 +10,7 @@ import 'package:design_engine/layer4_ui/design_engine_ui.dart';
 import 'package:search/l10n/app_localizations.dart';
 import 'package:search/features/search/logic/internet_service.dart';
 import 'package:search/features/search/logic/file_service.dart';
+import 'package:search/features/settings/logic/update_controller.dart';
 
 class AboutScreen extends StatefulWidget {
   const AboutScreen({super.key});
@@ -19,10 +20,6 @@ class AboutScreen extends StatefulWidget {
 }
 
 class _AboutScreenState extends State<AboutScreen> {
-  static const String appVersion = 'Alpha 1.0.1 Github';
-  static const _permissionChannel = MethodChannel('de.search.dw.search/permissions');
-  static const String _internetPermissionName = "de.search.companion.internet.dw.INTERNET_ACCESS";
-
   // Status-Variablen für Updates
   String _searchAppStatus = '...';
   String _fileCompanionStatus = '...';
@@ -33,7 +30,6 @@ class _AboutScreenState extends State<AboutScreen> {
   Color _internetCompanionStatusColor = Colors.grey;
 
   bool _isInternetCompanionInstalled = false;
-  bool _isInternetPermissionGranted = false;
 
   @override
   void initState() {
@@ -43,11 +39,6 @@ class _AboutScreenState extends State<AboutScreen> {
 
   Future<void> _checkAllUpdates() async {
     _isInternetCompanionInstalled = await InternetService.isCompanionInstalled();
-    try {
-      _isInternetPermissionGranted = await _permissionChannel.invokeMethod('checkPermission', {'permission': _internetPermissionName}) ?? false;
-    } catch (_) {
-      _isInternetPermissionGranted = false;
-    }
     final l10n = AppLocalizations.of(context);
 
     if (!_isInternetCompanionInstalled) {
@@ -64,24 +55,10 @@ class _AboutScreenState extends State<AboutScreen> {
       return;
     }
 
-    if (!_isInternetPermissionGranted) {
-      if (mounted) {
-        setState(() {
-          _searchAppStatus = l10n.get('update_status_permission_missing');
-          _searchAppStatusColor = Colors.orange;
-          _fileCompanionStatus = l10n.get('update_status_permission_missing');
-          _fileCompanionStatusColor = Colors.orange;
-          _internetCompanionStatus = l10n.get('update_status_permission_missing');
-          _internetCompanionStatusColor = Colors.orange;
-        });
-      }
-      return;
-    }
-
     // 1. Search App Check
     await _checkUpdate(
       repo: 'Universal-Search-for-Android',
-      localVersion: appVersion,
+      localVersion: UpdateController.mainVersion,
       onResult: (status, color) => setState(() {
         _searchAppStatus = status;
         _searchAppStatusColor = color;
@@ -100,7 +77,7 @@ class _AboutScreenState extends State<AboutScreen> {
     } else {
       await _checkUpdate(
         repo: 'Search-Files-Companion',
-        localVersion: appVersion,
+        localVersion: UpdateController.fileVersion,
         onResult: (status, color) => setState(() {
           _fileCompanionStatus = status;
           _fileCompanionStatusColor = color;
@@ -111,7 +88,7 @@ class _AboutScreenState extends State<AboutScreen> {
     // 3. Internet Companion Check
     await _checkUpdate(
       repo: 'Search-Internet-Companion',
-      localVersion: appVersion,
+      localVersion: UpdateController.internetVersion,
       onResult: (status, color) => setState(() {
         _internetCompanionStatus = status;
         _internetCompanionStatusColor = color;
@@ -134,14 +111,28 @@ class _AboutScreenState extends State<AboutScreen> {
       return;
     }
 
-    final cleanLocal = localVersion.toLowerCase().replaceAll('alpha', '').replaceAll('(no github)', '').trim();
-    final cleanLatest = latest.toLowerCase().replaceAll('v', '').replaceAll('alpha', '').trim();
+    final cleanLocal = _clean(localVersion);
+    final cleanLatest = _clean(latest);
 
-    if (cleanLatest == cleanLocal || cleanLocal.contains(cleanLatest)) {
-      onResult(l10n.get('update_status_up_to_date'), Colors.green);
-    } else {
+    if (_isHigher(cleanLatest, cleanLocal)) {
       onResult(l10n.get('update_status_available'), Colors.blue);
+    } else {
+      onResult(l10n.get('update_status_up_to_date'), Colors.green);
     }
+  }
+
+  String _clean(String v) => v.toLowerCase().replaceAll('alpha', '').replaceAll('(no github)', '').replaceAll('github', '').trim();
+
+  bool _isHigher(String remote, String local) {
+    try {
+      List<int> r = remote.split('.').map((e) => int.parse(e.replaceAll(RegExp(r'[^0-9]'), ''))).toList();
+      List<int> l = local.split('.').map((e) => int.parse(e.replaceAll(RegExp(r'[^0-9]'), ''))).toList();
+      for (int i = 0; i < r.length && i < l.length; i++) {
+        if (r[i] > l[i]) return true;
+        if (r[i] < l[i]) return false;
+      }
+      return r.length > l.length;
+    } catch (e) { return remote != local; }
   }
 
   void _showUpdateInfoDialog() {
@@ -229,7 +220,7 @@ class _AboutScreenState extends State<AboutScreen> {
                     ),
                     Center(
                       child: Text(
-                        appVersion,
+                        UpdateController.mainVersion,
                         style: TextStyle(
                           color: eonsv,
                           fontSize: 16,
@@ -259,7 +250,7 @@ class _AboutScreenState extends State<AboutScreen> {
                     Row(
                       children: [
                         Expanded(child: _buildSectionHeader(l10n.get('updates_title'), eonbg)),
-                        if (!_isInternetCompanionInstalled || !_isInternetPermissionGranted)
+                        if (!_isInternetCompanionInstalled)
                           Padding(
                             padding: const EdgeInsets.only(right: 16, bottom: 8),
                             child: InkWell(
@@ -398,7 +389,7 @@ class _AboutScreenState extends State<AboutScreen> {
                               showLicensePage(
                                 context: context,
                                 applicationName: l10n.get('app_name_title'),
-                                applicationVersion: appVersion,
+                                applicationVersion: UpdateController.mainVersion,
                               );
                             },
                           ),
