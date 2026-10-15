@@ -176,6 +176,7 @@
 <div align="center">
 
 <sub>Licensed under the <a href="license.txt">Apache License 2.0</a> · The font <i>Google Sans Flex</i> is licensed under the SIL Open Font License.</sub><br>
-<sub>All trademarks and logos belong to their respective owners.</sub>
+<sub>All trademarks and logos belong to their respective owners.</sub><br>
+<sub><a href="https://infowagnerdomenik-jpg.github.io/Universal-Search-for-Android/imprint.html">Imprint · Impressum</a> · <a href="https://infowagnerdomenik-jpg.github.io/Universal-Search-for-Android/privacy.html">Privacy · Datenschutz</a> · <a href="https://infowagnerdomenik-jpg.github.io/Universal-Search-for-Android/app-privacy.html">App privacy · App-Datenschutz</a></sub>
 
 </div>
