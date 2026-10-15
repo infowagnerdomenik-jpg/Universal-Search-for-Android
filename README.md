@@ -17,6 +17,7 @@
   <a href="#ai">AI</a> ·
   <a href="#design">Design</a> ·
   <a href="#privacy">Privacy</a> ·
+  <a href="#works-with">Works with</a> ·
   <a href="#get-started">Get started</a>
 </p>
 
@@ -85,8 +86,7 @@
 <td><img src="readme/icons/search/song.svg" width="52" align="left"><b>Recognize a song</b><br>With Audile, Shazam or Google.</td>
 </tr>
 <tr>
-<td><img src="readme/icons/search/notes.svg" width="52" align="left"><b>Notes</b><br>Search your notes or save a new one right from the search bar.</td>
-<td><img src="readme/icons/search/google.svg" width="52" align="left"><b>Google account</b> <sub>optional</sub><br>Calendar, Gmail, Drive, Tasks and contacts in your results.</td>
+<td colspan="2"><img src="readme/icons/search/notes.svg" width="52" align="left"><b>Notes</b><br>Search your notes or save a new one right from the search bar.</td>
 </tr>
 </table>
 
@@ -106,7 +106,7 @@
 
 <table>
 <tr>
-<td width="50%"><img src="readme/icons/home/today.svg" width="52" align="left"><b>Today</b><br>Date, weather, your next event, the most urgent task, alarm and birthdays.</td>
+<td width="50%"><img src="readme/icons/home/today.svg" width="52" align="left"><b>Today</b><br>Date, weather, your next event, alarm, birthdays and your latest notifications.</td>
 <td width="50%"><img src="readme/icons/home/music.svg" width="52" align="left"><b>Music</b><br>What's playing with controls – or your music service with its shortcuts.</td>
 </tr>
 <tr>
@@ -115,11 +115,10 @@
 </tr>
 <tr>
 <td><img src="readme/icons/home/recent.svg" width="52" align="left"><b>Files &amp; notes</b><br>Recently opened files and your latest notes.</td>
-<td><img src="readme/icons/home/gcards.svg" width="52" align="left"><b>Google cards</b><br>Events, open tasks, unread mails and recent documents.</td>
+<td><img src="readme/icons/home/pinned.svg" width="52" align="left"><b>Pinned cards</b><br>Pin any web card – it stays up to date.</td>
 </tr>
 <tr>
-<td><img src="readme/icons/home/pinned.svg" width="52" align="left"><b>Pinned cards</b><br>Pin any web card – it stays up to date.</td>
-<td><img src="readme/icons/home/hwidgets.svg" width="52" align="left"><b>Launcher widgets</b><br>Any widget of your apps, right between your cards.</td>
+<td colspan="2"><img src="readme/icons/home/hwidgets.svg" width="52" align="left"><b>Launcher widgets</b><br>Any widget of your apps, right between your cards.</td>
 </tr>
 </table>
 
@@ -255,6 +254,73 @@
 <td colspan="2"><img src="readme/icons/privacy/local.svg" width="52" align="left"><b>Stays on your device</b><br>Notification history and recently played music are never backed up.</td>
 </tr>
 </table>
+
+<br>
+
+<a name="works-with"></a>
+
+<img src="readme/sections/integrations.svg" width="100%" alt="Works with">
+
+<p align="center"><b>Search engines</b></p>
+<p align="center">
+  <img src="readme/logos/search/google.svg" width="64" alt="Google" title="Google">
+  <img src="readme/logos/search/bing.svg" width="64" alt="Bing" title="Bing">
+  <img src="readme/logos/search/duckduckgo.svg" width="64" alt="DuckDuckGo" title="DuckDuckGo">
+  <img src="readme/logos/search/ecosia.svg" width="64" alt="Ecosia" title="Ecosia">
+  <img src="readme/logos/search/brave.svg" width="64" alt="Brave" title="Brave">
+  <img src="readme/logos/search/startpage.svg" width="64" alt="Startpage" title="Startpage">
+  <img src="readme/logos/search/qwant.svg" width="64" alt="Qwant" title="Qwant">
+  <img src="readme/logos/search/perplexity.svg" width="64" alt="Perplexity" title="Perplexity">
+</p>
+
+<p align="center"><b>AI providers</b></p>
+<p align="center">
+  <img src="readme/logos/ai/gemini.svg" width="64" alt="Gemini" title="Gemini">
+  <img src="readme/logos/ai/chatgpt.svg" width="64" alt="ChatGPT" title="ChatGPT">
+  <img src="readme/logos/ai/claude.svg" width="64" alt="Claude" title="Claude">
+  <img src="readme/logos/ai/mistral.svg" width="64" alt="Mistral" title="Mistral">
+  <img src="readme/logos/ai/groq.svg" width="64" alt="Groq" title="Groq">
+  <img src="readme/logos/ai/openrouter.svg" width="64" alt="OpenRouter" title="OpenRouter">
+  <img src="readme/logos/ai/deepseek.svg" width="64" alt="DeepSeek" title="DeepSeek">
+  <img src="readme/logos/ai/perplexity.svg" width="64" alt="Perplexity" title="Perplexity">
+</p>
+
+<p align="center"><b>Music &amp; song recognition</b></p>
+<p align="center">
+  <img src="readme/logos/music/spotify.svg" width="64" alt="Spotify" title="Spotify">
+  <img src="readme/logos/music/youtube-music.svg" width="64" alt="YouTube Music" title="YouTube Music">
+  <img src="readme/logos/music/applemusic.svg" width="64" alt="Apple Music" title="Apple Music">
+  <img src="readme/logos/music/amazonmusic.svg" width="64" alt="Amazon Music" title="Amazon Music">
+  <img src="readme/logos/music/deezer.svg" width="64" alt="Deezer" title="Deezer">
+  <img src="readme/logos/music/tidal.svg" width="64" alt="Tidal" title="Tidal">
+  <img src="readme/logos/music/qobuz.svg" width="64" alt="Qobuz" title="Qobuz">
+  <img src="readme/logos/music/soundcloud.svg" width="64" alt="SoundCloud" title="SoundCloud">
+  <img src="readme/logos/music/youtube.svg" width="64" alt="YouTube" title="YouTube">
+  <img src="readme/logos/music/shazam.svg" width="64" alt="Shazam" title="Shazam">
+  <img src="readme/logos/music/audile.svg" width="64" alt="Audile" title="Audile">
+</p>
+
+<p align="center"><b>Movies &amp; series</b></p>
+<p align="center">
+  <img src="readme/logos/streaming/netflix.svg" width="64" alt="Netflix" title="Netflix">
+  <img src="readme/logos/streaming/primevideo.svg" width="64" alt="Prime Video" title="Prime Video">
+  <img src="readme/logos/streaming/disneyplus.svg" width="64" alt="Disney+" title="Disney+">
+  <img src="readme/logos/streaming/joyn.svg" width="64" alt="Joyn" title="Joyn">
+  <img src="readme/logos/streaming/rtlplus.svg" width="64" alt="RTL+" title="RTL+">
+  <img src="readme/logos/streaming/justwatch.svg" width="64" alt="JustWatch" title="JustWatch">
+  <img src="readme/logos/streaming/imdb.svg" width="64" alt="IMDb" title="IMDb">
+</p>
+
+<p align="center"><b>Knowledge, weather, maps &amp; more</b></p>
+<p align="center">
+  <img src="readme/logos/knowledge/wikipedia.svg" width="64" alt="Wikipedia" title="Wikipedia">
+  <img src="readme/logos/knowledge/openmeteo.svg" width="64" alt="Open-Meteo" title="Open-Meteo">
+  <img src="readme/logos/knowledge/osm.svg" width="64" alt="OpenStreetMap" title="OpenStreetMap">
+  <img src="readme/logos/knowledge/google-maps.svg" width="64" alt="Google Maps" title="Google Maps">
+  <img src="readme/logos/knowledge/amazon.svg" width="64" alt="Amazon" title="Amazon">
+</p>
+
+<p align="center"><sub>All trademarks and logos belong to their respective owners.</sub></p>
 
 <br>
 
