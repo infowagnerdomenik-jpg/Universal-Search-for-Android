@@ -5,7 +5,7 @@
   <img src="readme/panels/light/hero.svg" width="100%" alt="Universal Search – One search for your phone, the web and everything in between">
 </picture>
 
-<p><br><img src="readme/icon/app-icon.svg" width="160" alt="App icon"></p>
+<p><br><img src="readme/icon/app-icon.svg" width="240" alt="App icon"></p>
 
 <a href="#customization"><b>Customization</b></a> &nbsp;·&nbsp; <a href="#search"><b>Search</b></a> &nbsp;·&nbsp; <a href="#home"><b>Home</b></a> &nbsp;·&nbsp; <a href="#widgets"><b>Widgets &amp; Tiles</b></a> &nbsp;·&nbsp; <a href="#organization"><b>Organization</b></a> &nbsp;·&nbsp; <a href="#ai"><b>AI Assistant</b></a> &nbsp;·&nbsp; <a href="#design"><b>Design</b></a> &nbsp;·&nbsp; <a href="#privacy"><b>Privacy</b></a> &nbsp;·&nbsp; <a href="#works-with"><b>Works with</b></a> &nbsp;·&nbsp; <a href="#get-started"><b>Get started</b></a>
 
