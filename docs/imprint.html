@@ -8,6 +8,10 @@
 <meta name="theme-color" content="#F8F9FF" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#121318" media="(prefers-color-scheme: dark)">
 <link rel="icon" href="assets/app-icon.svg" type="image/svg+xml">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="assets/icons/icon-192.png">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Universal Search">
 <link rel="stylesheet" href="assets/fonts/fonts.css">
 <link rel="stylesheet" href="assets/site.css">
 <script>document.documentElement.classList.add('js-lang');(function(){var l='en';try{l=localStorage.getItem('lang')||((navigator.language||'').slice(0,2)==='de'?'de':'en')}catch(e){}document.documentElement.classList.add('show-'+l)})();</script>
@@ -102,6 +106,8 @@
   document.addEventListener('click',function(e){if(!res.hidden&&!res.contains(e.target)&&!box.contains(e.target)&&!btn.contains(e.target))res.hidden=true});
   res.addEventListener('click',function(e){if(e.target.closest('a'))open(false)});
 })();
+// Als App installierbar (Progressive Web App)
+if('serviceWorker' in navigator)addEventListener('load',function(){navigator.serviceWorker.register('sw.js').catch(function(){})});
 // GEMEINSAM-ENDE
 // Sprache umschalten
 (function(){var r=document.documentElement,bs=document.querySelectorAll('.lang button');function set(l){r.classList.remove('show-de','show-en');r.classList.add('show-'+l);bs.forEach(function(b){b.setAttribute('aria-pressed',b.dataset.set===l)});try{localStorage.setItem('lang',l)}catch(e){}}set(r.classList.contains('show-de')?'de':'en');bs.forEach(function(b){b.addEventListener('click',function(){set(b.dataset.set)})})})();

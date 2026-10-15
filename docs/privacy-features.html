@@ -8,6 +8,10 @@
 <meta name="theme-color" content="#F8F9FF" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#121318" media="(prefers-color-scheme: dark)">
 <link rel="icon" href="assets/app-icon.svg" type="image/svg+xml">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="assets/icons/icon-192.png">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Universal Search">
 <link rel="stylesheet" href="assets/fonts/fonts.css">
 <link rel="stylesheet" href="assets/site.css">
 </head>
@@ -102,6 +106,8 @@ document.body.classList.remove('no-js');
   document.addEventListener('click',function(e){if(!res.hidden&&!res.contains(e.target)&&!box.contains(e.target)&&!btn.contains(e.target))res.hidden=true});
   res.addEventListener('click',function(e){if(e.target.closest('a'))open(false)});
 })();
+// Als App installierbar (Progressive Web App)
+if('serviceWorker' in navigator)addEventListener('load',function(){navigator.serviceWorker.register('sw.js').catch(function(){})});
 // GEMEINSAM-ENDE
 </script>
 </body>
