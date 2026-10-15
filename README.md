@@ -1,6 +1,7 @@
 <div align="center">
   <img src="https://raw.githubusercontent.com/infowagnerdomenik-jpg/Universal-Search-for-Android/main/assets/icons/original/Search_App_Icon.svg" width="120" alt="Universal Search Icon">
   
+
   <h1>Universal Search</h1>
   <p><b>A privacy-first, modular universal search engine for Android.</b></p>
   
