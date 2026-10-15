@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  App-Icon der Such-App (Universal Search) als SVG.
+  Aufbau wie das adaptive Android-Icon: Fläche 108 × 108, sichtbar ist der Kreis in der Mitte (72 × 72, wie die
+  runde Maske des Launchers). Lupe = Material Symbols Rounded „search“ (Weight 700), gleiche Lage und Größe wie
+  im App-Icon.
+  Standardfarben (Androids Grundfarbe ohne Hintergrundbild-Farben, Material You „Tonal Spot“):
+    Hintergrund system_accent1_100 = #D9E2FF, Lupe system_accent1_700 = #2F4578.
+-->
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="18 18 72 72">
+  <circle cx="54" cy="54" r="36" fill="#D9E2FF"/>
+  <g transform="translate(26.82 26.38) scale(0.0582)">
+    <path fill="#2F4578" d="M372,663Q254,663 171.5,580.5Q89,498 89,380Q89,262 171.5,179.5Q254,97 372,97Q490,97 572.5,179.5Q655,262 655,380Q655,426 643,463.5Q631,501 611,529L827,746Q845,765 845,790.5Q845,816 826,834Q808,852 782,852Q756,852 738,834L523,619Q494,639 455.5,651Q417,663 372,663ZM372,537Q438,537 483.5,491.5Q529,446 529,380Q529,314 483.5,268.5Q438,223 372,223Q306,223 260.5,268.5Q215,314 215,380Q215,446 260.5,491.5Q306,537 372,537Z"/>
+  </g>
+</svg>
