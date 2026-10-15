@@ -7,6 +7,11 @@
 
 <p><br><img src="readme/icon/app-icon.svg" width="180" alt="App icon"></p>
 
+<p>
+<a href="https://infowagnerdomenik-jpg.github.io/Universal-Search-for-Android/"><picture><source media="(prefers-color-scheme: dark)" srcset="readme/panels/dark/btn-website.svg"><img src="readme/panels/light/btn-website.svg" width="340" alt="Visit the website"></picture></a>&nbsp;
+<a href="https://t.me/+k6TeqpEkUXdmOWNi"><picture><source media="(prefers-color-scheme: dark)" srcset="readme/panels/dark/btn-telegram.svg"><img src="readme/panels/light/btn-telegram.svg" width="340" alt="Join on Telegram"></picture></a>
+</p>
+
 <a href="#customization"><b>Customization</b></a> &nbsp;·&nbsp; <a href="#search"><b>Search</b></a> &nbsp;·&nbsp; <a href="#home"><b>Home</b></a> &nbsp;·&nbsp; <a href="#widgets"><b>Widgets &amp; Tiles</b></a> &nbsp;·&nbsp; <a href="#organization"><b>Organization</b></a> &nbsp;·&nbsp; <a href="#ai"><b>AI Assistant</b></a> &nbsp;·&nbsp; <a href="#design"><b>Design</b></a> &nbsp;·&nbsp; <a href="#privacy"><b>Privacy</b></a> &nbsp;·&nbsp; <a href="#works-with"><b>Works with</b></a> &nbsp;·&nbsp; <a href="#get-started"><b>Get started</b></a>
 
 </div>
@@ -154,6 +159,11 @@
   <img src="readme/panels/light/get-started.svg" width="100%" alt="Get started – download the latest release">
 </picture>
 </a>
+
+<p align="center">
+<a href="https://infowagnerdomenik-jpg.github.io/Universal-Search-for-Android/"><picture><source media="(prefers-color-scheme: dark)" srcset="readme/panels/dark/btn-website.svg"><img src="readme/panels/light/btn-website.svg" width="340" alt="Visit the website"></picture></a>&nbsp;
+<a href="https://t.me/+k6TeqpEkUXdmOWNi"><picture><source media="(prefers-color-scheme: dark)" srcset="readme/panels/dark/btn-telegram.svg"><img src="readme/panels/light/btn-telegram.svg" width="340" alt="Join on Telegram"></picture></a>
+</p>
 
 <!-- Build from source:
 ```
