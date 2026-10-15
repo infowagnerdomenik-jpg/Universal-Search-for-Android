@@ -557,3 +557,38 @@ ul.dots li::before{content:"";position:absolute;left:2px;top:.6em;width:9px;heig
 .wsbox button svg{width:20px;height:20px;fill:currentColor}
 .wfilter.searching .wsbtn,.wfilter.searching .wchips{display:none}
 .wfilter .wchips{flex:1 1 auto;min-width:0}
+
+/* ─── Menü: scrollt im sichtbaren Bereich, Seite dahinter gesperrt ─── */
+html.menu-open,html.menu-open body{overflow:hidden}
+.sheet-in{max-height:calc(100dvh - 96px);overflow-y:auto;overscroll-behavior:contain;-webkit-overflow-scrolling:touch}
+@supports not (height:100dvh){.sheet-in{max-height:calc(100vh - 140px)}}
+
+/* ─── Suche in der Leiste ─── */
+#sbtn{flex:none}
+.barsearch{display:flex;align-items:center;gap:8px;flex:1 1 auto;min-width:0;height:46px;padding:0 4px 0 14px;border-radius:23px;background:var(--surface2);box-shadow:inset 0 0 0 2px var(--primary);animation:bsIn .35s var(--spring)}
+.barsearch[hidden]{display:none}
+.barsearch>svg{width:20px;height:20px;fill:var(--on2);flex:none}
+.barsearch input{flex:1;min-width:0;border:0;background:transparent;color:var(--on);font:500 16px var(--font);outline:none}
+.barsearch button{width:38px;height:38px;border:0;border-radius:19px;background:transparent;color:var(--on2);display:grid;place-items:center;cursor:pointer;flex:none}
+.barsearch button svg{width:20px;height:20px;fill:currentColor}
+@keyframes bsIn{from{opacity:0;transform:scaleX(.7);transform-origin:right}}
+.bar-in.searching .brand,.bar-in.searching .links,.bar-in.searching .spacer,.bar-in.searching .bar-dl,.bar-in.searching #sbtn{display:none!important}
+.sresults{position:absolute;left:24px;right:24px;top:76px;z-index:61;display:grid;gap:4px;max-height:calc(100dvh - 110px);overflow-y:auto;overscroll-behavior:contain;padding:8px;border-radius:28px;background:var(--surface);box-shadow:0 1px 0 color-mix(in srgb,var(--outline) 40%,transparent),0 24px 60px -20px rgba(0,0,0,.5);animation:sheetIn .3s var(--spring)}
+.sresults[hidden]{display:none}
+.sr{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:2px 10px;padding:12px 14px;border-radius:20px;text-decoration:none;color:var(--on);transition:background .2s,border-radius .3s var(--spring)}
+.sr:hover,.sr:focus{background:var(--surface2);border-radius:12px;outline:none}
+.sr b{font-size:16px;line-height:1.3;overflow-wrap:break-word;min-width:0}
+.sr-p{align-self:start;padding:2px 10px;border-radius:12px;background:var(--pc);color:var(--onpc);font-size:12px;font-weight:700;white-space:nowrap}
+.sr-d{grid-column:1/-1;font-size:14px;color:var(--on2);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.sr-none{padding:14px;color:var(--on2)}
+@media (max-width:640px){.sresults{left:16px;right:16px}}
+@media (max-width:420px){.sresults{left:10px;right:10px;top:66px}.sr-p{display:none}}
+
+/* Menü & Trefferliste fest am Bildschirm verankert (unabhängig von der Leiste) */
+html.menu-open,html.menu-open body{overflow:visible}
+.sheet,.sresults{position:fixed;top:84px;left:max(24px,calc((100vw - 1240px)/2 + 24px));right:max(24px,calc((100vw - 1240px)/2 + 24px))}
+.sheet-in,.sresults{max-height:calc(100dvh - 100px)}
+@supports not (height:100dvh){.sheet-in,.sresults{max-height:calc(100vh - 150px)}}
+@media (min-width:900px){.sheet{left:auto;width:420px}}
+@media (max-width:640px){.sheet,.sresults{left:16px;right:16px;top:80px}}
+@media (max-width:420px){.sheet,.sresults{left:10px;right:10px;top:72px}}
