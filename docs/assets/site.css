@@ -431,3 +431,26 @@ footer{margin-top:44px}
 .menu-btn{display:grid!important}
 @media (min-width:901px){.links{display:flex!important}}
 @media (max-width:900px){.links{display:none!important}.bar-in .spacer{flex:1}}
+
+/* ─── Unterseiten-Inhalte ─── */
+.page-intro{font-size:clamp(18px,1.8vw,22px);line-height:1.55;color:var(--on);max-width:900px;margin:8px 8px 8px}
+.topic{margin-top:44px}
+.topic-head{display:flex;align-items:center;gap:18px;margin:0 8px 16px}
+.topic-head .badge{width:72px;height:72px;flex:none}.topic-head .badge>svg:last-child{width:34px;height:34px}
+.topic-head h2{font-size:clamp(28px,3.6vw,44px);line-height:1.08;letter-spacing:-.02em;font-weight:800;min-width:0}
+.topic-intro{font-size:17px;color:var(--on2);max-width:860px;margin:0 8px 18px}
+.details{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:16px;margin-top:16px}
+.card.detail h3{font-size:20px;margin:0 0 10px}
+ul.dots{list-style:none;display:grid;gap:8px;padding:0;margin:0}
+ul.dots li{position:relative;padding-left:22px;color:var(--on2);font-size:15.5px}
+ul.dots li::before{content:"";position:absolute;left:2px;top:.6em;width:9px;height:9px;border-radius:3px;background:var(--acc);transform:rotate(45deg)}
+.card.detail{display:block}
+@media (max-width:420px){.topic{margin-top:32px}.topic-head{gap:12px;margin:0 4px 12px}.topic-head .badge{width:52px;height:52px}.topic-head .badge>svg:last-child{width:24px;height:24px}.topic-head h2{font-size:clamp(22px,7.4vw,28px)}.page-intro{font-size:17px;margin:4px}.topic-intro{font-size:15.5px;margin:0 4px 12px}.details{gap:8px;margin-top:8px}}
+
+/* Rechtsseiten: Sprachumschalter und Listen in sehr schmalen Ansichten */
+.lang{flex-wrap:wrap;max-width:100%}
+.legal-head p{overflow-wrap:break-word;hyphens:auto}
+.legal-body ul{margin-left:0;padding-left:18px}
+.legal-body li{overflow-wrap:break-word;hyphens:auto}
+@media (max-width:300px){.lang button{padding:0 14px;font-size:14px}.legal-head p{font-size:15px}}
+@media (max-width:300px){.legal-body li{overflow-wrap:anywhere}}
