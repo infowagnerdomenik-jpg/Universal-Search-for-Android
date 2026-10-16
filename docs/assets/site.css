@@ -592,3 +592,30 @@ html.menu-open,html.menu-open body{overflow:visible}
 @media (min-width:900px){.sheet{left:auto;width:420px}}
 @media (max-width:640px){.sheet,.sresults{left:16px;right:16px;top:80px}}
 @media (max-width:420px){.sheet,.sresults{left:10px;right:10px;top:72px}}
+
+/* Sprachwahl im Menü: ausklappbare Karte mit Sprach-Chips */
+.sheet-in{grid-template-columns:minmax(0,1fr)}
+.langs,.lang-grid{min-width:0}
+.langs{margin:0 0 6px;border-radius:24px;background:var(--surface2);overflow:hidden}
+.langs summary{display:flex;align-items:center;gap:12px;min-height:52px;padding:6px 14px 6px 16px;cursor:pointer;list-style:none;font-weight:600}
+.langs summary::-webkit-details-marker{display:none}
+.langs summary>svg{width:22px;height:22px;fill:currentColor;flex:none}
+.langs .l-lab{flex:1 1 auto;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.langs .l-cur{flex:none;max-width:45%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:var(--on2);font-weight:500}
+.langs .l-arr{transition:transform .35s var(--spring)}
+.langs[open] .l-arr{transform:rotate(180deg)}
+.lang-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(118px,1fr));gap:6px;padding:4px 10px 12px}
+.lang-grid a{display:flex;align-items:center;min-height:40px;padding:6px 14px;border-radius:20px;background:var(--surface);color:var(--on);text-decoration:none;font-weight:600;font-size:15px;min-width:0;overflow-wrap:anywhere;transition:border-radius .35s var(--spring),background .2s}
+.lang-grid a:hover{border-radius:12px}
+.lang-grid a[aria-current]{background:var(--primary);color:var(--onprimary)}
+/* Sprachen in der Fußzeile */
+.foot-langs{display:flex;flex-wrap:wrap;align-items:center;gap:6px}
+.foot-langs>svg{width:20px;height:20px;fill:var(--on2);flex:none;margin-inline-end:4px}
+.foot-langs a{display:inline-flex;align-items:center;min-height:32px;padding:4px 12px;border-radius:16px;color:var(--on2);font-size:14px;text-decoration:none;transition:background .2s,color .2s}
+.foot-langs a:hover{background:var(--surface);color:var(--on)}
+.foot-langs a[aria-current]{background:var(--surface);color:var(--on);font-weight:700}
+/* Rechtsseiten in weiteren Sprachen: Hinweis, dass die Texte deutsch/englisch sind */
+.legal-note{margin:0 0 16px;padding:12px 16px;border-radius:16px;background:var(--surface2);color:var(--on2);font-size:15px}
+/* Lange Wörter in allen Sprachen (Finnisch, Niederländisch, Deutsch …): in schmalen Kacheln trennen statt überstehen */
+.stat span,.wstat .wl{overflow-wrap:anywhere;hyphens:auto;-webkit-hyphens:auto}
+@media (max-width:300px){li,p,h2,h3,.card *{overflow-wrap:anywhere}:lang(ja) li,:lang(zh) li,:lang(ko) li,:lang(ja) p,:lang(zh) p{line-break:anywhere}}
